@@ -1,6 +1,6 @@
-# LAPORAN-TUGAS-APBO-SISTEM-INFORMASI-MANAJEMEN-KOS-BERBASIS-WEB
+# LAPORAN-TUGAS-APBO-SISTEM-INFORMASI-MANAJEMEN-KOS
 
-# Sistem Informasi Manajemen Kos Berbasis Web
+# Sistem Informasi Manajemen Kos
 
 ## Permasalahan
 
