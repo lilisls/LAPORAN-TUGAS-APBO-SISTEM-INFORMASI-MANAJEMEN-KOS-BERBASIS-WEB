@@ -218,3 +218,56 @@ Klik tiap bagian untuk melihat perbandingan sistem lama (manual) dan sistem baru
 | | **Lapor & Bayar** | Melaporkan keluhan fasilitas dan melakukan konfirmasi pembayaran. |
 
 ---
+
+### 📋 Detail Use Case Tambahan
+
+#### A. Manajemen Kamar & Penempatan (Onboarding)
+**Aktor:** Admin
+**Deskripsi:** Mendaftarkan unit kamar beserta fasilitasnya ke dalam sistem, serta menempatkan penghuni baru ke kamar yang berstatus kosong agar data keterisian kost selalu terbarui.
+
+**🎬 Skenario Admin:**
+1. Admin mendaftarkan nomor kamar dan fasilitas (misal: Kamar 01 - AC - Rp 1.5jt).
+2. Saat ada penghuni baru, Admin memilih kamar yang berstatus **Kosong (🟢)**.
+3. Admin memasukkan data penghuni dan menentukan Tanggal Jatuh Tempo.
+4. Sistem otomatis mengubah status kamar menjadi **Terisi (🔴)**.
+
+#### B. Pencatatan Biaya Operasional & Laporan Net Profit
+**Aktor:** Admin
+**Deskripsi:** Mencatat pengeluaran rutin kost untuk diakumulasikan dan dihitung selisihnya dengan total pendapatan sewa, sehingga menghasilkan laporan keuntungan bersih (laba/rugi).
+
+**🎬 Skenario Admin:**
+1. Admin memasukkan pengeluaran kost (misal: Tagihan Listrik Induk, Gaji Penjaga, perbaikan atap).
+2. Sistem mengurangkan total pendapatan (sewa) dengan total pengeluaran.
+3. Admin melihat Laporan Laba Rugi bulanan di dashboard.
+
+#### C. Proses Check-out & Pengosongan Kamar
+**Aktor:** Admin
+**Deskripsi:** Memproses penghentian masa sewa penghuni, pengecekan kondisi akhir kamar terkait pemotongan uang deposit, dan mengosongkan kembali status kamar untuk disewakan ulang.
+
+**🎬 Skenario Admin:**
+1. Penghuni mengajukan berhenti sewa.
+2. Admin mengecek kondisi kamar. Jika ada kerusakan, Admin memotong biaya dari uang deposit.
+3. Admin menekan tombol **Check-out**.
+4. Sistem menghapus penghuni dari daftar aktif (memindahkannya ke arsip/history) dan mengubah status kamar kembali menjadi **Kosong (🟢)**.
+
+#### D. Pembayaran Sewa Bulanan
+**Aktor:** Penghuni
+**Precondition:** Sistem telah men-generasi tagihan pada tanggal jatuh tempo dengan status **Belum Bayar (❌)**.
+**Deskripsi:** Melakukan konfirmasi pembayaran sewa bulanan dengan mengunggah bukti transfer agar dapat diverifikasi oleh Admin.
+
+**🎬 Skenario Penghuni:**
+1. Penghuni masuk ke dashboard dan melihat rincian tagihan bulan ini.
+2. Penghuni melakukan pembayaran (transfer bank/e-wallet).
+3. Penghuni mengunggah foto bukti transfer atau struk pembayaran ke dalam sistem.
+4. Sistem mengubah status tagihan menjadi **Menunggu Verifikasi (🟡)** dan mengirim notifikasi ke Admin.
+
+#### E. Pelaporan Keluhan (Maintenance)
+**Aktor:** Penghuni
+**Deskripsi:** Melaporkan kerusakan fasilitas kamar (seperti AC bocor, lampu mati, atau masalah air) secara digital agar tercatat dan segera ditindaklanjuti oleh pengelola.
+
+**🎬 Skenario Penghuni:**
+1. Penghuni masuk ke menu **Komplain/Perbaikan**.
+2. Penghuni memilih kategori kerusakan dan mengunggah foto bukti fasilitas yang rusak.
+3. Penghuni menuliskan deskripsi singkat mengenai kendala yang dialami lalu menekan tombol kirim.
+4. Sistem mengirimkan notifikasi ke Admin dan status laporan menjadi **Menunggu Respon (🟡)**.
+5. Penghuni memantau perubahan status perbaikan di sistem hingga berubah menjadi **Selesai (🟢)**.
