@@ -289,5 +289,9 @@ Klik tiap bagian untuk melihat perbandingan sistem lama (manual) dan sistem baru
 
 **Output / Hasil Akhir:** Terbentuk grafik atau laporan bersih laba/rugi yang bisa diunduh oleh pengelola.
 
+---
+
 ### 📊 Diagram Use Case
 <img width="631" height="620" alt="Screenshot 2026-04-29 195457" src="https://github.com/user-attachments/assets/82f6fced-9841-46b5-9056-f69fd832a4d4" />
+
+---
