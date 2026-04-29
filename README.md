@@ -117,79 +117,81 @@ Tugas & Tanggung Jawab:
 - Mencatat histori pembayaran dan keluhan
 - Membantu memfilter data (siapa yang belum bayar, dll)
 
-# ⚖️ Bagian 2: Analisis Perbandingan Sistem
+## ⚖️ Bagian 2: Analisis Perbandingan Sistem
+
+Klik tiap bagian untuk melihat perbandingan sistem lama (manual) dan sistem baru (digital):
 
 <details>
-<summary><b>Berikut perbandingan antara sistem lama (manual) dengan sistem baru (digital):</b></summary>
+<summary><b>1.  Manajemen Data Penghuni</b></summary>
+<br>
 
-1. **Manajemen Data Penghuni**
-   > **❌ Sistem Manual:**
-
-Data disimpan dalam bentuk fisik (KTP & KK)
-Sulit dicari karena tercampur dalam satu map
-Risiko kehilangan data tinggi
-
-**✅ Sistem Digital:**
-
-Data tersimpan dalam database terpusat
-Pencarian cepat dan terstruktur
-Data lebih aman dan terorganisir
-
-2. **Bagian mana yang paling krusial untuk segera diperbaiki?**
-   > **❌ Sistem Manual:**
-
-Dicatat di buku tulis
-Bukti pembayaran via screenshot WhatsApp
-Harus cek satu per satu untuk mengetahui status pembayaran
-Rentan kesalahan pencatatan
-
-**✅ Sistem Digital:**
-
-Pembayaran tercatat otomatis dalam sistem
-Upload bukti langsung ke sistem
-Status pembayaran real-time
-Rekap keuangan tersedia di dashboard
-
-3. **Pengingat Pembayaran**
-   > **❌ Sistem Manual:**
-
-Pengelola menagih secara manual
-Sering lupa atau sungkan menagih
-Banyak keterlambatan pembayaran
-
-**✅ Sistem Digital:**
-
-Notifikasi otomatis dikirim ke penghuni
-Pengingat sebelum jatuh tempo
-Mengurangi keterlambatan pembayaran
-
-4. **Penanganan Keluhan**
-   > **❌ Sistem Manual:**
-
-Disampaikan via chat atau langsung
-Tidak terdokumentasi dengan baik
-Banyak keluhan terlewat
-
-**✅ Sistem Digital:**
-
-Keluhan tercatat dalam sistem
-Tersedia riwayat dan tracking
-Lebih mudah dipantau dan ditindaklanjuti
-
-5. **Penyampaian Informasi**
-   > **❌ Sistem Manual:**
-
-Mengandalkan grup WhatsApp
-Informasi mudah tertumpuk
-Tidak semua penghuni membaca
-
-**✅ Sistem Digital:**
-
-Notifikasi langsung ke pengguna
-Informasi lebih terstruktur
-Bisa diakses kembali kapan saja
+* **❌ Sistem Manual:**
+    * Data disimpan dalam bentuk fisik (fotokopi KTP & KK)
+    * Sulit mencari data karena tercampur dalam satu map
+    * Risiko kehilangan data cukup tinggi
+* **✅ Sistem Digital:**
+    * Data penghuni tersimpan dalam database terpusat
+    * Pencarian data cepat dan terstruktur
+    * Data lebih aman dan tidak mudah hilang
 </details>
 
+<details>
+<summary><b>2.  Pencatatan & Monitoring Pembayaran</b></summary>
+<br>
+
+* **❌ Sistem Manual:**
+    * Pembayaran dicatat di buku tulis
+    * Bukti pembayaran hanya berupa screenshot WhatsApp
+    * Harus cek satu per satu untuk tahu siapa yang belum bayar
+    * Rentan kesalahan pencatatan
+* **✅ Sistem Digital:**
+    * Pembayaran tercatat otomatis dalam sistem
+    * Penghuni upload bukti langsung ke sistem
+    * Status pembayaran bisa dilihat secara real-time
+    * Tersedia rekap otomatis di dashboard
+</details>
+
+<details>
+<summary><b>3.  Pengingat Pembayaran</b></summary>
+<br>
+
+* **❌ Sistem Manual:**
+    * Pengelola harus mengingat dan menagih satu per satu
+    * Sering merasa sungkan saat menagih
+    * Banyak penghuni telat bayar karena lupa
+* **✅ Sistem Digital:**
+    * Sistem mengirim notifikasi otomatis (misal via WhatsApp)
+    * Pengingat dikirim sebelum jatuh tempo
+    * Mengurangi keterlambatan pembayaran
+</details>
+
+<details>
+<summary><b>4.  Penanganan Keluhan</b></summary>
+<br>
+
+* **❌ Sistem Manual:**
+    * Keluhan disampaikan via chat atau langsung
+    * Tidak terdokumentasi dengan baik
+    * Banyak keluhan terlewat atau terlupakan
+* **✅ Sistem Digital:**
+    * Keluhan dicatat dalam sistem
+    * Ada riwayat dan tracking status keluhan
+    * Pengelola lebih mudah memantau dan menindaklanjuti
+</details>
+
+<details>
+<summary><b>5.  Penyampaian Informasi</b></summary>
+<br>
+
+* **❌ Sistem Manual:**
+    * Menggunakan grup WhatsApp
+    * Informasi sering tertumpuk dan terlewat
+    * Tidak semua penghuni membaca info
+* **✅ Sistem Digital:**
+    * Notifikasi langsung ke masing-masing pengguna
+    * Informasi lebih terstruktur dan tidak mudah hilang
+    * Bisa diakses kembali kapan saja di sistem
+</details>
 
       
 
