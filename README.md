@@ -11,7 +11,7 @@
 | Kornelius Timothy Setiawan | 4524210050 |
 
 
-# 💬 Hasil Wawancara: Sistem Pengelolaan Kos
+# 💬 Hasil Wawancara: Sistem Informasi Manajemen Kos
 
 Klik pada masing-masing bagian di bawah ini untuk melihat detail daftar pertanyaan dan jawaban hasil wawancara terkait sistem yang sedang berjalan:
 
@@ -82,6 +82,15 @@ Klik pada masing-masing bagian di bawah ini untuk melihat detail daftar pertanya
    > "Untuk penghuni, notifikasi via WhatsApp adalah yang paling efektif. Sedangkan untuk pengelola, saya membutuhkan *dashboard* berbasis web agar bisa melihat rekapitulasi data secara menyeluruh."
 </details>
 
+---
+## 🎥 Video Dokumentasi
+
+[![Video Dokumentasi](<img width="1600" height="800" alt="WhatsApp Image 2026-04-28 at 18 19 29" src="https://github.com/user-attachments/assets/ca4014cd-be44-402e-b5ea-db11a2f3c432" />
+)](https://youtu.be/RORLaileWqk?si=z_BPL-Vcyipsy4my)
+
+*(Klik gambar di atas untuk memutar video)*
+
+---
 #  📋 Bagian 1: Analisis Aktor
 
  1. 👨‍💼 Pengelola Kos (Admin)
@@ -117,6 +126,7 @@ Tugas & Tanggung Jawab:
 - Mencatat histori pembayaran dan keluhan
 - Membantu memfilter data (siapa yang belum bayar, dll)
 
+---
 ## ⚖️ Bagian 2: Analisis Perbandingan Sistem
 
 Klik tiap bagian untuk melihat perbandingan sistem lama (manual) dan sistem baru (digital):
