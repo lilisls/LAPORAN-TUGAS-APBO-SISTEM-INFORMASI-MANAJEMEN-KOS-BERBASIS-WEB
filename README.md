@@ -85,7 +85,7 @@ Klik pada masing-masing bagian di bawah ini untuk melihat detail daftar pertanya
 #  📋 Bagian 1: Analisis Aktor
 
  1. 👨‍💼 Pengelola Kos (Admin)
- 2.  
+ 
  Aktor utama yang memiliki kontrol penuh terhadap sistem dan operasional kos.
 
  Tugas & Tanggung Jawab: 
@@ -109,8 +109,8 @@ Tugas & Tanggung Jawab:
 
 3. 📱 Sistem (Automated System)
 Aktor non-manusia yang membantu otomatisasi proses dalam sistem.
-
-- Tugas & Tanggung Jawab:
+ 
+Tugas & Tanggung Jawab:
 - Mengirim notifikasi otomatis (misalnya pengingat pembayaran)
 - Menyimpan dan mengelola database penghuni & pembayaran
 - Menampilkan dashboard rekap data secara real-time
@@ -119,17 +119,76 @@ Aktor non-manusia yang membantu otomatisasi proses dalam sistem.
 
 # ⚖️ Bagian 2: Analisis Perbandingan Sistem
 
-Berikut perbandingan antara sistem lama (manual) dengan sistem baru (digital):
- 
-<details> 1. **Manajemen Data Penghuni** <details>
+<details>
+<summary><b>Berikut perbandingan antara sistem lama (manual) dengan sistem baru (digital):</b></summary>
+
+1. **Manajemen Data Penghuni**
    > **❌ Sistem Manual:**
-      - Data disimpan dalam bentuk fisik (KTP & KK)
-      - Sulit dicari karena tercampur dalam satu map
-      - Risiko kehilangan data tinggi
-   **✅ Sistem Digital:**
-      - Data tersimpan dalam database terpusat
-      - Pencarian cepat dan terstruktur
-      - Data lebih aman dan terorganisir
+
+Data disimpan dalam bentuk fisik (KTP & KK)
+Sulit dicari karena tercampur dalam satu map
+Risiko kehilangan data tinggi
+
+**✅ Sistem Digital:**
+
+Data tersimpan dalam database terpusat
+Pencarian cepat dan terstruktur
+Data lebih aman dan terorganisir
+
+2. **Bagian mana yang paling krusial untuk segera diperbaiki?**
+   > **❌ Sistem Manual:**
+
+Dicatat di buku tulis
+Bukti pembayaran via screenshot WhatsApp
+Harus cek satu per satu untuk mengetahui status pembayaran
+Rentan kesalahan pencatatan
+
+**✅ Sistem Digital:**
+
+Pembayaran tercatat otomatis dalam sistem
+Upload bukti langsung ke sistem
+Status pembayaran real-time
+Rekap keuangan tersedia di dashboard
+
+3. **Pengingat Pembayaran**
+   > **❌ Sistem Manual:**
+
+Pengelola menagih secara manual
+Sering lupa atau sungkan menagih
+Banyak keterlambatan pembayaran
+
+**✅ Sistem Digital:**
+
+Notifikasi otomatis dikirim ke penghuni
+Pengingat sebelum jatuh tempo
+Mengurangi keterlambatan pembayaran
+
+4. **Penanganan Keluhan**
+   > **❌ Sistem Manual:**
+
+Disampaikan via chat atau langsung
+Tidak terdokumentasi dengan baik
+Banyak keluhan terlewat
+
+**✅ Sistem Digital:**
+
+Keluhan tercatat dalam sistem
+Tersedia riwayat dan tracking
+Lebih mudah dipantau dan ditindaklanjuti
+
+5. **Penyampaian Informasi**
+   > **❌ Sistem Manual:**
+
+Mengandalkan grup WhatsApp
+Informasi mudah tertumpuk
+Tidak semua penghuni membaca
+
+**✅ Sistem Digital:**
+
+Notifikasi langsung ke pengguna
+Informasi lebih terstruktur
+Bisa diakses kembali kapan saja
+</details>
 
 
       
