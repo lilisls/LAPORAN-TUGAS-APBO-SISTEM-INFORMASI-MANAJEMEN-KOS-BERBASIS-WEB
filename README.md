@@ -85,11 +85,7 @@ Klik pada masing-masing bagian di bawah ini untuk melihat detail daftar pertanya
 ---
 ## 🎥 Video Dokumentasi
 
-## 🎥 Video Dokumentasi
-
 [![Video Dokumentasi](cover/cover.jpeg)](https://youtu.be/RORLaileWqk)
-
-*(Klik gambar di atas untuk memutar video)*
 
 *(Klik gambar di atas untuk memutar video)*
 
@@ -128,8 +124,8 @@ Tugas & Tanggung Jawab:
 - Menampilkan dashboard rekap data secara real-time
 - Mencatat histori pembayaran dan keluhan
 - Membantu memfilter data (siapa yang belum bayar, dll)
-
 ---
+
 ## ⚖️ Bagian 2: Analisis Perbandingan Sistem
 
 Klik tiap bagian untuk melihat perbandingan sistem lama (manual) dan sistem baru (digital):
@@ -205,7 +201,23 @@ Klik tiap bagian untuk melihat perbandingan sistem lama (manual) dan sistem baru
     * Informasi lebih terstruktur dan tidak mudah hilang
     * Bisa diakses kembali kapan saja di sistem
 </details>
+---
 
+## ⚙️ 3. Use Case
+
+### 👥 Ringkasan Aktor
+
+| Aktor | Tujuan | Skenario Tindakan Utama |
+| :--- | :--- | :--- |
+| **Admin (Pemilik/Pengelola)** | **Mengelola Data Penghuni** | Menginput data diri, foto KTP, dan kontak darurat ke sistem digital. |
+| | **Mencatat Pembayaran** | Memverifikasi bukti transfer atau cash dan memperbarui status tagihan. |
+| | **Memantau Tunggakan** | Melihat rekap penghuni yang belum bayar melalui dashboard. |
+| | **Mengelola Keluhan** | Menerima dan menandai status perbaikan fasilitas yang dilaporkan penghuni. |
+| | **Broadcast Informasi** | Mengirim pengumuman penting yang langsung terhubung ke WhatsApp. |
+| **Penghuni** | **Melaporkan Pembayaran** | Mengunggah bukti bayar (screenshot) melalui sistem. |
+| | **Mengajukan Keluhan** | Mengirim laporan kerusakan fasilitas agar tercatat secara resmi. |
+| | **Melihat Riwayat** | Mengecek riwayat pembayaran bulanan dan status tagihan pribadi. |
+| | **Menerima Notifikasi** | Mendapatkan pengingat otomatis saat mendekati tanggal jatuh tempo. |
       
 
 
