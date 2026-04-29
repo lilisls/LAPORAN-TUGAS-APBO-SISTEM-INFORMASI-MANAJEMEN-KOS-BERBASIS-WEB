@@ -84,7 +84,7 @@ Klik pada masing-masing bagian di bawah ini untuk melihat detail daftar pertanya
 
 #  📋 Bagian 1: Analisis Aktor
 
-<summary><b> 1. 👨‍💼 Pengelola Kos (Admin) <summary><b>
+ 1. 👨‍💼 Pengelola Kos (Admin) 
 Aktor utama yang memiliki kontrol penuh terhadap sistem dan operasional kos.
 
  Tugas & Tanggung Jawab: 
