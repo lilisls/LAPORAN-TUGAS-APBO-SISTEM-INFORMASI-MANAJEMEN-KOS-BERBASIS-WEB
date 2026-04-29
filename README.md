@@ -270,7 +270,7 @@ Klik tiap bagian untuk melihat perbandingan sistem lama (manual) dan sistem baru
 
 ---
 
-### 📋 Rincian Alur Sistem (Proses Inti)
+### 📋 Detail Use Case
 
 #### 1. Pendaftaran Penghuni & Alokasi Kamar (Onboarding)
 **Aktor:** Pengelola (Admin)  
