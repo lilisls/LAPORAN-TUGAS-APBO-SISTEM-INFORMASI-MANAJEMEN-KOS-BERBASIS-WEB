@@ -121,10 +121,19 @@ Aktor non-manusia yang membantu otomatisasi proses dalam sistem.
 
 Berikut perbandingan antara sistem lama (manual) dengan sistem baru (digital):
 
+<details>
+   
 1. **Manajemen Data Penghuni**
    > **❌ Sistem Manual:**
       - Data disimpan dalam bentuk fisik (KTP & KK)
       - Sulit dicari karena tercampur dalam satu map
-      - Risiko kehilangan data tingg
+      - Risiko kehilangan data tinggi
+   **✅ Sistem Digital:**
+      - Data tersimpan dalam database terpusat
+      - Pencarian cepat dan terstruktur
+      - Data lebih aman dan terorganisir
+
+
+      
 
 
