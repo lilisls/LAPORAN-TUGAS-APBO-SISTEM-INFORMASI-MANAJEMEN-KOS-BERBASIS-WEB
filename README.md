@@ -107,9 +107,11 @@ Klik pada masing-masing bagian di bawah ini untuk melihat detail daftar pertanya
 
 # 📖 Latar Belakang
 
-Pengelolaan rumah kos di sekitar kawasan kampus umumnya masih dilakukan secara manual, terutama dalam pencatatan data penyewa, ketersediaan kamar, serta pembayaran sewa. Cara ini berpotensi menimbulkan berbagai permasalahan seperti kesalahan pencatatan, keterlambatan informasi, hingga kesulitan dalam memantau status kamar secara akurat. Di sisi lain, tingginya mobilitas mahasiswa sebagia penyewa kos menuntut adanya akses informasi yang cepat dan praktis terkait ketersediaan kamar, harga, serta fasilitas yang ditawarkan
+Pengelolaan rumah kos saat ini masih dilakukan secara manual, terutama dalam pencatatan data penyewa, ketersediaan kamar, serta pembayaran sewa. Cara ini berpotensi menimbulkan berbagai permasalahan seperti kesalahan pencatatan, keterlambatan informasi, hingga kesulitan dalam memantau status kamar secara akurat. Di sisi lain, tingginya mobilitas mahasiswa sebagia penyewa kos menuntut adanya akses informasi yang cepat dan praktis terkait ketersediaan kamar, harga, serta fasilitas yang ditawarkan
 
 Untuk mengatasi permasalahan tersebut, diperlukan sebuah sistem informasi manajemen kos berbasis web yang mampu mengintegrasikan proses pengelolaan data sekaligus memberikan kemudahan akses bagi penyewa sebagai pengguna utama. Sistem ini diharapkan dapat membantu pengelola dalam melakukan pencatatan secara lebih terstruktur dan efisien, serta memungkinkan penyewa memperoleh informasi kos secara real-time tanpa harus datang langsung ke lokasi. Dengan demikian, sistem ini tidak hanya meningkatkan efisiensi pengelolaan, tetapi juga memberikan nilai tambah dalam pelayanan kepada penyewa di lingkungan sekitar kampus.
+
+---
 
 #  📋 Bagian 1: Analisis Aktor
 
@@ -295,3 +297,9 @@ Klik tiap bagian untuk melihat perbandingan sistem lama (manual) dan sistem baru
 <img width="631" height="620" alt="Screenshot 2026-04-29 195457" src="https://github.com/user-attachments/assets/82f6fced-9841-46b5-9056-f69fd832a4d4" />
 
 ---
+
+# Kesimpulan
+
+Berdasarkan hasil wawancara dan analisis, pengelolaan kos yang masih dilakukan secara manual menimbulkan berbagai kendala, seperti kesulitan pencatatan data, monitoring pembayaran yang tidak efisien, serta komunikasi yang kurang optimal antara pengelola dan penghuni. Penggunaan media sederhana seperti buku tulis dan WhatsApp terbukti belum mampu mendukung pengelolaan secara efektif.
+
+Oleh karena itu, sistem informasi manajemen kos berbasis web menjadi solusi yang tepat dengan melibatkan pengelola sebagai admin dan penghuni sebagai user. Sistem ini diharapkan dapat meningkatkan efisiensi pengelolaan, mempermudah akses informasi, serta memperbaiki kualitas layanan dan komunikasi secara lebih terstruktur dan real-time.
