@@ -88,10 +88,3 @@ Klik pada masing-masing bagian di bawah ini untuk melihat detail daftar pertanya
 4. **Preferensi notifikasi seperti apa yang Anda harapkan?**
    > "Untuk penghuni, notifikasi via WhatsApp adalah yang paling efektif. Sedangkan untuk pengelola, saya membutuhkan *dashboard* berbasis web agar bisa melihat rekapitulasi data secara menyeluruh."
 </details>
-
-2. **Kalau misalnya ada sistem pengingat otomatis, apakah akan mempermudah?**
-   *"Sangat mempermudah sih. Soalnya sekarang harus ngingetin satu-satu lewat WhatsApp, kadang juga suka sungkan."*
-
-3. **Untuk notifikasi, Mbak lebih prefer seperti apa?**
-   *"Kalau untuk penghuni, menurut saya paling efektif lewat WhatsApp karena pasti sering dibuka. Tapi kalau untuk saya sebagai pengelola, enaknya ada juga di dashboard web biar bisa lihat rekapnya sekalian."*
-</details>
