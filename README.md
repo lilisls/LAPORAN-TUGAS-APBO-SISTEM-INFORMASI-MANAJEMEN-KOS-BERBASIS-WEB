@@ -10,7 +10,7 @@
 | Bunga Putri Nuriman | 4524210021 |
 | Kornelius Timothy Setiawan | 4524210050 |
 
-# Latar Belakang
+# 📖 Latar Belakang
 
 Pengelolaan rumah kos di sekitar kawasan kampus umumnya masih dilakukan secara manual, terutama dalam pencatatan data penyewa, ketersediaan kamar, serta pembayaran sewa. Cara ini berpotensi menimbulkan berbagai permasalahan seperti kesalahan pencatatan, keterlambatan informasi, hingga kesulitan dalam memantau status kamar secara akurat. Di sisi lain, tingginya mobilitas mahasiswa sebagia penyewa kos menuntut adanya akses informasi yang cepat dan praktis terkait ketersediaan kamar, harga, serta fasilitas yang ditawarkan
 
