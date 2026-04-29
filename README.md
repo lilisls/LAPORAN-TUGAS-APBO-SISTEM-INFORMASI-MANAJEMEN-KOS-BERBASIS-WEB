@@ -203,71 +203,67 @@ Klik tiap bagian untuk melihat perbandingan sistem lama (manual) dan sistem baru
 </details>
 ---
 
-## ⚙️ 3. Use Case (Updated)
+## 📌 3. Skenario Sistem (Use Case)
 
-### 👥 Ringkasan Aktor
+### 👥 Pemetaan Aktor & Hak Akses
 
-| Aktor | Tujuan | Skenario Tindakan Utama |
+| Peran (Aktor) | Ruang Lingkup Akses | Fungsionalitas Utama |
 | :--- | :--- | :--- |
-| **Admin (Pemilik/Pengelola)** | **Manajemen Kamar & Fasilitas** | Mengatur ketersediaan kamar, harga, dan inventaris di dalamnya. |
-| | **Manajemen Penghuni (Onboarding)** | Mendaftarkan penghuni baru dan menempatkannya di nomor kamar tertentu. |
-| | **Verifikasi & Keuangan** | Memvalidasi pembayaran dan mencatat biaya operasional (listrik/air). |
-| | **Manajemen Check-out** | Memproses penghuni keluar, pengembalian deposit, dan pengosongan kamar. |
-| | **Broadcast & Monitoring** | Mengirim pengumuman via WhatsApp dan memantau grafik hunian/tunggakan. |
-| **Penghuni** | **Self-Service Portal** | Melihat tagihan, riwayat, dan profil kamar mereka. |
-| | **Lapor & Bayar** | Melaporkan keluhan fasilitas dan melakukan konfirmasi pembayaran. |
+| **Pengelola (Admin)** | Kontrol penuh atas properti, data penyewa, dan arus kas keuangan. | • Mengelola ketersediaan unit kamar.<br>• Memproses masuk/keluarnya penghuni.<br>• Memvalidasi bukti bayar & mencatat operasional.<br>• Mengirim notifikasi tunggakan (Broadcast). |
+| **Penghuni Kost** | Akses personal ke layanan informasi kamar masing-masing. | • Memantau rincian tagihan bulanan.<br>• Mengunggah resi/bukti pembayaran.<br>• Membuat tiket pengaduan/keluhan fasilitas. |
 
 ---
 
-### 📋 Detail Use Case Tambahan
+### 📋 Rincian Alur Sistem (Proses Inti)
 
-#### A. Manajemen Kamar & Penempatan (Onboarding)
-**Aktor:** Admin
-**Deskripsi:** Mendaftarkan unit kamar beserta fasilitasnya ke dalam sistem, serta menempatkan penghuni baru ke kamar yang berstatus kosong agar data keterisian kost selalu terbarui.
+#### 1. Pendaftaran Penghuni & Alokasi Kamar (Onboarding)
+**Aktor:** Pengelola (Admin)  
+**Tujuan:** Memasukkan data penyewa baru ke dalam database dan menetapkan unit kamar yang akan ditempati.  
+**Alur Interaksi:**
+1. Pengelola membuka menu *Manajemen Kamar* dan memfilter unit yang berstatus `[KOSONG]`.
+2. Pengelola menginput kelengkapan data diri penyewa (KTP, Kontak darurat).
+3. Pengelola menentukan durasi sewa, uang jaminan (deposit), dan tanggal jatuh tempo.
 
-**🎬 Skenario Admin:**
-1. Admin mendaftarkan nomor kamar dan fasilitas (misal: Kamar 01 - AC - Rp 1.5jt).
-2. Saat ada penghuni baru, Admin memilih kamar yang berstatus **Kosong (🟢)**.
-3. Admin memasukkan data penghuni dan menentukan Tanggal Jatuh Tempo.
-4. Sistem otomatis mengubah status kamar menjadi **Terisi (🔴)**.
+**Output / Hasil Akhir:** Unit kamar terkunci dengan status `[DIHUNI]` dan akun portal untuk penyewa otomatis aktif.
 
-#### B. Pencatatan Biaya Operasional & Laporan Net Profit
-**Aktor:** Admin
-**Deskripsi:** Mencatat pengeluaran rutin kost untuk diakumulasikan dan dihitung selisihnya dengan total pendapatan sewa, sehingga menghasilkan laporan keuntungan bersih (laba/rugi).
+#### 2. Pelunasan Tagihan Sewa Bulanan
+**Aktor:** Penghuni & Pengelola  
+**Syarat Awal:** Sistem telah menerbitkan *invoice* tagihan berstatus `[BELUM DIBAYAR]`.  
+**Alur Interaksi:**
+1. Penghuni masuk ke portal, melihat nominal tagihan, lalu melakukan transfer dana.
+2. Penghuni melampirkan foto resi transfer ke dalam sistem.
+3. Status tagihan otomatis berubah menjadi `[MENUNGGU VERIFIKASI]`.
+4. Pengelola menerima peringatan sistem, mengecek mutasi rekening, dan menekan tombol *Verifikasi Lunas*.
 
-**🎬 Skenario Admin:**
-1. Admin memasukkan pengeluaran kost (misal: Tagihan Listrik Induk, Gaji Penjaga, perbaikan atap).
-2. Sistem mengurangkan total pendapatan (sewa) dengan total pengeluaran.
-3. Admin melihat Laporan Laba Rugi bulanan di dashboard.
+**Output / Hasil Akhir:** Sistem menerbitkan kuitansi digital dan riwayat pembayaran penghuni tercatat sukses.
 
-#### C. Proses Check-out & Pengosongan Kamar
-**Aktor:** Admin
-**Deskripsi:** Memproses penghentian masa sewa penghuni, pengecekan kondisi akhir kamar terkait pemotongan uang deposit, dan mengosongkan kembali status kamar untuk disewakan ulang.
+#### 3. Tiket Laporan Keluhan (Maintenance)
+**Aktor:** Penghuni & Pengelola  
+**Tujuan:** Memfasilitasi pelaporan fasilitas yang rusak (misal: AC bocor, kran mati) agar tidak terlewat oleh pengelola.  
+**Alur Interaksi:**
+1. Penghuni membuat tiket aduan baru dengan memilih kategori dan melampirkan foto kerusakan.
+2. Tiket masuk ke *dashboard* pengelola dengan status `[ANTREAN]`.
+3. Pengelola mengalokasikan teknisi/tukang dan mengubah status menjadi `[DIPROSES]`.
+4. Setelah masalah teratasi, pengelola menutup tiket aduan tersebut.
 
-**🎬 Skenario Admin:**
-1. Penghuni mengajukan berhenti sewa.
-2. Admin mengecek kondisi kamar. Jika ada kerusakan, Admin memotong biaya dari uang deposit.
-3. Admin menekan tombol **Check-out**.
-4. Sistem menghapus penghuni dari daftar aktif (memindahkannya ke arsip/history) dan mengubah status kamar kembali menjadi **Kosong (🟢)**.
+**Output / Hasil Akhir:** Status tiket menjadi `[SELESAI]` dan penghuni bisa melihat pembaruannya di portal mereka.
 
-#### D. Pembayaran Sewa Bulanan
-**Aktor:** Penghuni
-**Precondition:** Sistem telah men-generasi tagihan pada tanggal jatuh tempo dengan status **Belum Bayar (❌)**.
-**Deskripsi:** Melakukan konfirmasi pembayaran sewa bulanan dengan mengunggah bukti transfer agar dapat diverifikasi oleh Admin.
+#### 4. Pengosongan Kamar (Proses Check-out)
+**Aktor:** Pengelola (Admin)  
+**Tujuan:** Menyelesaikan masa sewa penghuni, menangani deposit, dan menyiapkan kamar untuk penyewa berikutnya.  
+**Alur Interaksi:**
+1. Penghuni mengonfirmasi masa akhir sewa kepada pengelola.
+2. Pengelola melakukan inspeksi final kamar. Jika ada kerusakan berat, pengelola mencatat potongan dari uang deposit.
+3. Pengelola menekan eksekusi *Check-out* pada profil penghuni.
 
-**🎬 Skenario Penghuni:**
-1. Penghuni masuk ke dashboard dan melihat rincian tagihan bulan ini.
-2. Penghuni melakukan pembayaran (transfer bank/e-wallet).
-3. Penghuni mengunggah foto bukti transfer atau struk pembayaran ke dalam sistem.
-4. Sistem mengubah status tagihan menjadi **Menunggu Verifikasi (🟡)** dan mengirim notifikasi ke Admin.
+**Output / Hasil Akhir:** Data penghuni diarsipkan ke daftar *Alumni*, dan status kamar dikembalikan menjadi `[KOSONG]`.
 
-#### E. Pelaporan Keluhan (Maintenance)
-**Aktor:** Penghuni
-**Deskripsi:** Melaporkan kerusakan fasilitas kamar (seperti AC bocor, lampu mati, atau masalah air) secara digital agar tercatat dan segera ditindaklanjuti oleh pengelola.
+#### 5. Rekapitulasi Keuangan & Operasional
+**Aktor:** Pengelola (Admin)  
+**Tujuan:** Menghitung laba/rugi bulanan dari bisnis kost.  
+**Alur Interaksi:**
+1. Pengelola mencatat semua biaya operasional bulanan (Token listrik induk, iuran sampah, biaya perbaikan).
+2. Sistem mengakumulasikan total pengeluaran tersebut.
+3. Sistem membandingkannya dengan total pemasukan dari sewa kamar bulan itu.
 
-**🎬 Skenario Penghuni:**
-1. Penghuni masuk ke menu **Komplain/Perbaikan**.
-2. Penghuni memilih kategori kerusakan dan mengunggah foto bukti fasilitas yang rusak.
-3. Penghuni menuliskan deskripsi singkat mengenai kendala yang dialami lalu menekan tombol kirim.
-4. Sistem mengirimkan notifikasi ke Admin dan status laporan menjadi **Menunggu Respon (🟡)**.
-5. Penghuni memantau perubahan status perbaikan di sistem hingga berubah menjadi **Selesai (🟢)**.
+**Output / Hasil Akhir:** Terbentuk grafik atau laporan bersih laba/rugi yang bisa diunduh oleh pengelola.
