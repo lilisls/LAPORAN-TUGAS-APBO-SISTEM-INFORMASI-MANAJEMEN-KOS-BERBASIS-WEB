@@ -203,21 +203,18 @@ Klik tiap bagian untuk melihat perbandingan sistem lama (manual) dan sistem baru
 </details>
 ---
 
-## ⚙️ 3. Use Case
+## ⚙️ 3. Use Case (Updated)
 
 ### 👥 Ringkasan Aktor
 
 | Aktor | Tujuan | Skenario Tindakan Utama |
 | :--- | :--- | :--- |
-| **Admin (Pemilik/Pengelola)** | **Mengelola Data Penghuni** | Menginput data diri, foto KTP, dan kontak darurat ke sistem digital. |
-| | **Mencatat Pembayaran** | Memverifikasi bukti transfer atau cash dan memperbarui status tagihan. |
-| | **Memantau Tunggakan** | Melihat rekap penghuni yang belum bayar melalui dashboard. |
-| | **Mengelola Keluhan** | Menerima dan menandai status perbaikan fasilitas yang dilaporkan penghuni. |
-| | **Broadcast Informasi** | Mengirim pengumuman penting yang langsung terhubung ke WhatsApp. |
-| **Penghuni** | **Melaporkan Pembayaran** | Mengunggah bukti bayar (screenshot) melalui sistem. |
-| | **Mengajukan Keluhan** | Mengirim laporan kerusakan fasilitas agar tercatat secara resmi. |
-| | **Melihat Riwayat** | Mengecek riwayat pembayaran bulanan dan status tagihan pribadi. |
-| | **Menerima Notifikasi** | Mendapatkan pengingat otomatis saat mendekati tanggal jatuh tempo. |
-      
+| **Admin (Pemilik/Pengelola)** | **Manajemen Kamar & Fasilitas** | Mengatur ketersediaan kamar, harga, dan inventaris di dalamnya. |
+| | **Manajemen Penghuni (Onboarding)** | Mendaftarkan penghuni baru dan menempatkannya di nomor kamar tertentu. |
+| | **Verifikasi & Keuangan** | Memvalidasi pembayaran dan mencatat biaya operasional (listrik/air). |
+| | **Manajemen Check-out** | Memproses penghuni keluar, pengembalian deposit, dan pengosongan kamar. |
+| | **Broadcast & Monitoring** | Mengirim pengumuman via WhatsApp dan memantau grafik hunian/tunggakan. |
+| **Penghuni** | **Self-Service Portal** | Melihat tagihan, riwayat, dan profil kamar mereka. |
+| | **Lapor & Bayar** | Melaporkan keluhan fasilitas dan melakukan konfirmasi pembayaran. |
 
-
+---
