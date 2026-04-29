@@ -87,7 +87,7 @@ Klik pada masing-masing bagian di bawah ini untuk melihat detail daftar pertanya
 <summary><b> 1. 👨‍💼 Pengelola Kos (Admin) <summary><b>
 Aktor utama yang memiliki kontrol penuh terhadap sistem dan operasional kos.
 
-** Tugas & Tanggung Jawab: **
+ Tugas & Tanggung Jawab: 
 - Mengelola data penghuni (input, update, dan pencarian data)
 - Mengelola data kamar (status kosong/terisi)
 - Mencatat dan memverifikasi pembayaran kos
