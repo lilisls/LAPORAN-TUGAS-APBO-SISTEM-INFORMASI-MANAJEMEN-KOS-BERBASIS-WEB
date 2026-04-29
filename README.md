@@ -81,3 +81,41 @@ Klik pada masing-masing bagian di bawah ini untuk melihat detail daftar pertanya
 4. **Preferensi notifikasi seperti apa yang Anda harapkan?**
    > "Untuk penghuni, notifikasi via WhatsApp adalah yang paling efektif. Sedangkan untuk pengelola, saya membutuhkan *dashboard* berbasis web agar bisa melihat rekapitulasi data secara menyeluruh."
 </details>
+
+
+#  📋 Bagian 1: Analisis Aktor
+1. 👨‍💼 Pengelola Kos (Admin)
+
+Aktor utama yang memiliki kontrol penuh terhadap sistem dan operasional kos.
+
+Tugas & Tanggung Jawab:
+
+Mengelola data penghuni (input, update, dan pencarian data)
+Mengelola data kamar (status kosong/terisi)
+Mencatat dan memverifikasi pembayaran kos
+Melihat rekapitulasi keuangan melalui dashboard
+Menanggapi dan mengelola keluhan dari penghuni
+Mengirim atau memantau notifikasi/pengingat pembayaran
+2. 🧑‍💻 Penghuni Kos (User)
+
+Aktor yang menggunakan layanan kos dan berinteraksi langsung dengan sistem.
+
+Tugas & Tanggung Jawab:
+
+Melakukan pembayaran kos (transfer/cash)
+Mengunggah bukti pembayaran
+Melihat status pembayaran (lunas/belum)
+Mengirim keluhan terkait fasilitas kos
+Menerima notifikasi (pengingat pembayaran & informasi penting)
+3. 📱 Sistem (Automated System)
+
+Aktor non-manusia yang membantu otomatisasi proses dalam sistem.
+
+Tugas & Tanggung Jawab:
+
+Mengirim notifikasi pengingat pembayaran (misal via WhatsApp)
+Menyimpan dan mengelola database penghuni & pembayaran
+Menampilkan dashboard rekap data secara real-time
+Mencatat histori pembayaran dan keluhan
+Membantu memfilter data (siapa yang belum bayar, dll)
+
