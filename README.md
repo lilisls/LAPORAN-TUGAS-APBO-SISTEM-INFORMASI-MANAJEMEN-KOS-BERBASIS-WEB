@@ -84,8 +84,9 @@ Klik pada masing-masing bagian di bawah ini untuk melihat detail daftar pertanya
 
 #  📋 Bagian 1: Analisis Aktor
 
- 1. 👨‍💼 Pengelola Kos (Admin) 
-Aktor utama yang memiliki kontrol penuh terhadap sistem dan operasional kos.
+ 1. 👨‍💼 Pengelola Kos (Admin)
+ 2.  
+ Aktor utama yang memiliki kontrol penuh terhadap sistem dan operasional kos.
 
  Tugas & Tanggung Jawab: 
 - Mengelola data penghuni (input, update, dan pencarian data)
@@ -94,5 +95,36 @@ Aktor utama yang memiliki kontrol penuh terhadap sistem dan operasional kos.
 - Melihat rekapitulasi keuangan melalui dashboard
 - Menanggapi dan mengelola keluhan dari penghuni
 - Mengirim atau memantau notifikasi/pengingat pembayaran
+
+2. 🧑‍💻 Penghuni Kos (User)
+
+Aktor yang menggunakan layanan kos dan berinteraksi langsung dengan sistem.
+
+Tugas & Tanggung Jawab:
+- Melakukan pembayaran kos (transfer/cash)
+- Mengunggah bukti pembayaran
+- Melihat status pembayaran (lunas/belum)
+- Mengirim keluhan terkait fasilitas kos
+- Menerima notifikasi (pengingat pembayaran & informasi penting)
+
+3. 📱 Sistem (Automated System)
+Aktor non-manusia yang membantu otomatisasi proses dalam sistem.
+
+- Tugas & Tanggung Jawab:
+- Mengirim notifikasi otomatis (misalnya pengingat pembayaran)
+- Menyimpan dan mengelola database penghuni & pembayaran
+- Menampilkan dashboard rekap data secara real-time
+- Mencatat histori pembayaran dan keluhan
+- Membantu memfilter data (siapa yang belum bayar, dll)
+
+# ⚖️ Bagian 2: Analisis Perbandingan Sistem
+
+Berikut perbandingan antara sistem lama (manual) dengan sistem baru (digital):
+
+1. **Manajemen Data Penghuni**
+   > **❌ Sistem Manual:**
+      - Data disimpan dalam bentuk fisik (KTP & KK)
+      - Sulit dicari karena tercampur dalam satu map
+      - Risiko kehilangan data tingg
 
 
