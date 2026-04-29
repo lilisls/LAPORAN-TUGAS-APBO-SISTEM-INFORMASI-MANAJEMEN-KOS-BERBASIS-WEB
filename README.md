@@ -85,10 +85,7 @@ Klik pada masing-masing bagian di bawah ini untuk melihat detail daftar pertanya
 ---
 ## 🎥 Video Dokumentasi
 
-[![Video Dokumentasi](<img width="1600" height="800" alt="WhatsApp Image 2026-04-28 at 18 19 29" src="https://github.com/user-attachments/assets/ca4014cd-be44-402e-b5ea-db11a2f3c432" />
-)](https://youtu.be/RORLaileWqk?si=z_BPL-Vcyipsy4my)
-
-*(Klik gambar di atas untuk memutar video)*
+[![Video Dokumentasi](https://img.youtube.com/vi/RORLaileWqk/maxresdefault.jpg)](https://youtu.be/RORLaileWqk?si=z_BPL-Vcyipsy4my)
 
 ---
 #  📋 Bagian 1: Analisis Aktor
