@@ -12,44 +12,44 @@
 
 ---
 
-# [Sasaran Pengguna]
+# Sasaran Pengguna
 ### [Peran Pengguna 1, misal: Admin/Pengelola]
 ### [Peran Pengguna 2, misal: User/Pelanggan]
 
 ---
 
-# [Studi Literatur]
+# Studi Literatur
 ### 1. [Topik Literatur 1]
 ### 2. [Topik Literatur 2]
 ### 3. [Topik Literatur 3]
 
 ---
 
-# [Hasil Wawancara: Topik Proyek]
+# Hasil Wawancara: Topik Proyek
 
 ---
 
-## [Video Dokumentasi / Link Demo]
+# Video Dokumentasi / Link Demo
 
 ---
 
-# [Latar Belakang]
+# Latar Belakang
 
 ---
 
-# [Bagian 1: Analisis Aktor]
+## Bagian 1: Analisis Aktor
 
 ---
 
-## [Bagian 2: Analisis Perbandingan Sistem]
+## Bagian 2: Analisis Perbandingan Sistem
 
 ---
 
-## [Bagian 3: Skenario Sistem / Use Case]
-### [Pemetaan Aktor & Hak Akses]
-### [Detail Use Case]
-### [Diagram Use Case]
+## Bagian 3: Skenario Sistem / Use Case
+### Pemetaan Aktor & Hak Akses
+### Detail Use Case
+### Diagram Use Case
 
 ---
 
-# [Kesimpulan]
+# Kesimpulan
