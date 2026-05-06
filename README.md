@@ -39,11 +39,93 @@
 
 ## Bagian 1: Analisis Aktor
 
+# 1. Pengelola Kos (Admin)
+
+Pengelola kos menjadi pihak yang paling berperan dalam sistem ini karena semua kegiatan operasional dipegang oleh pengelola. Dari yang saya lihat, sebagian besar proses masih dilakukan secara manual, sehingga cukup merepotkan jika data sudah banyak.
+
+Tugas dan tanggung jawab:
+- Mengelola data penghuni, seperti menambah atau mengubah data
+- Mengatur kamar, apakah masih kosong atau sudah terisi
+- Mencatat dan mengecek pembayaran dari penghuni
+- Melihat laporan keuangan
+- Menangani keluhan dari penghuni
+- Mengingatkan penghuni terkait pembayaran
+
 ---
+
+# 2. Penghuni Kos (User)
+
+Penghuni kos adalah pengguna yang langsung menggunakan sistem ini. Biasanya lebih fokus pada pembayaran dan penyampaian keluhan.
+
+Tugas dan tanggung jawab:
+- Melakukan pembayaran kos
+- Mengunggah bukti pembayaran
+- Mengecek status pembayaran
+- Menyampaikan keluhan jika ada masalah
+- Menerima informasi atau pengingat dari sistem
+
+---
+
+# 3. Sistem
+
+Sistem berfungsi untuk membantu agar semua proses menjadi lebih rapi dan tidak lagi dilakukan secara manual.
+
+Tugas dan tanggung jawab:
+- Mengirim notifikasi otomatis, seperti pengingat pembayaran
+- Menyimpan data penghuni dan pembayaran
+- Menampilkan data dalam bentuk dashboard
+- Menyimpan riwayat pembayaran dan keluhan
+- Membantu pencarian data dengan lebih cepat
 
 ## Bagian 2: Analisis Perbandingan Sistem
 
+# 1. Manajemen Data Penghuni
+
+**Sistem manual:**
+Data biasanya disimpan dalam bentuk berkas seperti fotokopi KTP. Jika jumlah data sudah banyak, akan sulit dicari karena tercampur.
+
+**Sistem digital:**
+Data disimpan dalam database sehingga lebih rapi dan mudah dicari. Risiko kehilangan data juga lebih kecil.
+
 ---
+
+# 2. Pembayaran
+
+**Sistem manual:**
+Pembayaran dicatat di buku, dan bukti pembayaran sering dikirim melalui WhatsApp. Untuk mengecek siapa yang belum bayar harus dilakukan satu per satu.
+
+**Sistem digital:**
+Pembayaran tercatat langsung di sistem. Penghuni dapat mengunggah bukti pembayaran dan statusnya bisa langsung dilihat.
+
+---
+
+# 3. Pengingat Pembayaran
+
+**Sistem manual:**
+Pengelola harus mengingat dan menagih secara manual, dan terkadang merasa tidak enak.
+
+**Sistem digital:**
+Sistem dapat mengirim pengingat otomatis sehingga lebih praktis dan mengurangi keterlambatan.
+
+---
+
+# 4. Keluhan
+
+**Sistem manual:**
+Keluhan disampaikan melalui chat dan tidak selalu tercatat dengan baik.
+
+**Sistem digital:**
+Keluhan tercatat dalam sistem sehingga memiliki riwayat dan lebih mudah ditindaklanjuti.
+
+---
+
+# 5. Penyampaian Informasi
+
+**Sistem manual:**
+Informasi disampaikan melalui grup WhatsApp, namun sering tertumpuk dan terlewat.
+
+**Sistem digital:**
+Informasi lebih teratur dan dapat diakses kembali kapan saja.
 
 ## Bagian 3: Skenario Sistem / Use Case
 
