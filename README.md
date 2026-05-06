@@ -81,50 +81,50 @@ Tugas dan tanggung jawab:
 
 # 1. Manajemen Data Penghuni
 
-**Sistem manual:**
+Sistem manual:
 Data biasanya disimpan dalam bentuk berkas seperti fotokopi KTP. Jika jumlah data sudah banyak, akan sulit dicari karena tercampur.
 
-**Sistem digital:**
+Sistem digital:
 Data disimpan dalam database sehingga lebih rapi dan mudah dicari. Risiko kehilangan data juga lebih kecil.
 
 ---
 
 # 2. Pembayaran
 
-**Sistem manual:**
+Sistem manual:
 Pembayaran dicatat di buku, dan bukti pembayaran sering dikirim melalui WhatsApp. Untuk mengecek siapa yang belum bayar harus dilakukan satu per satu.
 
-**Sistem digital:**
+Sistem digital:
 Pembayaran tercatat langsung di sistem. Penghuni dapat mengunggah bukti pembayaran dan statusnya bisa langsung dilihat.
 
 ---
 
 # 3. Pengingat Pembayaran
 
-**Sistem manual:**
+Sistem manual:
 Pengelola harus mengingat dan menagih secara manual, dan terkadang merasa tidak enak.
 
-**Sistem digital:**
+Sistem digital:
 Sistem dapat mengirim pengingat otomatis sehingga lebih praktis dan mengurangi keterlambatan.
 
 ---
 
 # 4. Keluhan
 
-**Sistem manual:**
+Sistem manual:
 Keluhan disampaikan melalui chat dan tidak selalu tercatat dengan baik.
 
-**Sistem digital:**
+Sistem digital:
 Keluhan tercatat dalam sistem sehingga memiliki riwayat dan lebih mudah ditindaklanjuti.
 
 ---
 
 # 5. Penyampaian Informasi
 
-**Sistem manual:**
+Sistem manual:
 Informasi disampaikan melalui grup WhatsApp, namun sering tertumpuk dan terlewat.
 
-**Sistem digital:**
+Sistem digital:
 Informasi lebih teratur dan dapat diakses kembali kapan saja.
 
 ## Bagian 3: Skenario Sistem / Use Case
