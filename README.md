@@ -309,6 +309,12 @@ Berikut adalah pemetaan aktor yang terlibat dalam Sistem Informasi Manajemen Kos
 
 ---
 
+### Diagram Use Case
+
+<img width="1323" height="1161" alt="Diagram Class APBO" src="https://github.com/user-attachments/assets/9d84a93e-18b6-4ff5-bbb4-b2138bd53df9" />
+
+---
+
 # Kesimpulan
 
 Berdasarkan hasil wawancara dan analisis sistem yang sedang berjalan, dapat disimpulkan bahwa pengelolaan kos yang masih dilakukan secara manual menimbulkan berbagai permasalahan signifikan, seperti kesulitan dalam pencatatan dan pencarian data penghuni, ketidakefisienan dalam monitoring pembayaran, serta kurang optimalnya komunikasi antara pengelola dan penghuni. Permasalahan ini diperkuat oleh kondisi nyata di lapangan, seperti penggunaan buku tulis dan WhatsApp sebagai media utama, yang terbukti rentan terhadap kesalahan, kehilangan data, serta informasi yang terlewat.
