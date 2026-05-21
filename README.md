@@ -315,6 +315,312 @@ Berikut adalah pemetaan aktor yang terlibat dalam Sistem Informasi Manajemen Kos
 
 ---
 
+# Penjelasan Diagram Class
+
+Diagram class pada Sistem Informasi Manajemen Kos digunakan untuk menggambarkan struktur sistem, hubungan antar objek, serta fungsi yang dimiliki oleh setiap class dalam sistem. Diagram ini membantu dalam memahami bagaimana proses pengelolaan kos berjalan secara terintegrasi.
+
+## 1. Class Admin
+
+Class Admin merepresentasikan pengelola kos yang memiliki hak akses penuh terhadap sistem. Admin bertanggung jawab dalam mengelola seluruh aktivitas operasional seperti pengelolaan kamar, penghuni, pembayaran, laporan keuangan, serta penanganan keluhan.
+
+### Attribute
+- idAdmin : identitas unik admin
+- nama : nama pengelola
+- username : akun login admin
+- password : kata sandi akun
+- noHp : nomor telepon admin
+
+### Method
+- login() : digunakan untuk masuk ke sistem
+- kelolaKamar() : mengelola data kamar
+- kelolaPenghuni() : mengelola data penghuni
+- verifikasiBayar() : memverifikasi pembayaran penghuni
+- lihatLaporan() : melihat laporan keuangan
+- tanganiKeluhan() : menangani laporan keluhan
+- kirimNotifikasi() : mengirim pengingat atau informasi kepada penghuni
+
+---
+
+## 2. Class Penghuni
+
+Class Penghuni merepresentasikan penyewa kamar kos yang menggunakan sistem untuk melakukan pembayaran, melihat tagihan, serta menyampaikan keluhan.
+
+### Attribute
+- idPenghuni : identitas penghuni
+- nama : nama penghuni
+- alamat : alamat asal penghuni
+- noHp : nomor telepon penghuni
+- noKTP : nomor identitas penghuni
+- kontakDarurat : kontak darurat penghuni
+- tglMasuk : tanggal mulai sewa
+- tglKeluar : tanggal akhir sewa
+- username : akun login penghuni
+- password : kata sandi akun
+
+### Method
+- login() : masuk ke sistem
+- uploadPembayaran() : mengunggah bukti pembayaran
+- kirimKeluhan() : membuat laporan keluhan
+- lihatTagihan() : melihat tagihan bulanan
+- lihatRiwayat() : melihat riwayat pembayaran
+
+---
+
+## 3. Class Teknisi
+
+Class Teknisi digunakan untuk menangani perbaikan fasilitas kos berdasarkan laporan keluhan dari penghuni.
+
+### Attribute
+- idTeknisi : identitas teknisi
+- nama : nama teknisi
+- noHp : nomor telepon teknisi
+- bidang : bidang pekerjaan teknisi
+
+### Method
+- perbaikiFasilitas() : melakukan proses perbaikan fasilitas
+
+---
+
+## 4. Class Kamar
+
+Class Kamar digunakan untuk menyimpan seluruh informasi terkait kamar kos.
+
+### Attribute
+- idKamar : identitas kamar
+- nomorKamar : nomor kamar
+- tipeKamar : jenis kamar
+- harga : biaya sewa kamar
+- status : status kamar kosong atau dihuni
+- fasilitas : fasilitas yang tersedia
+
+### Method
+- ubahStatus() : mengubah status kamar
+- tampilInfo() : menampilkan informasi kamar
+
+---
+
+## 5. Class Keluhan
+
+Class Keluhan digunakan untuk mencatat laporan kerusakan atau masalah fasilitas dari penghuni.
+
+### Attribute
+- idKeluhan : identitas keluhan
+- kategori : jenis keluhan
+- deskripsi : detail masalah
+- foto : foto bukti kerusakan
+- status : status penanganan keluhan
+- tanggalKeluhan : tanggal laporan dibuat
+
+### Method
+- buatKeluhan() : membuat laporan baru
+- updateStatus() : memperbarui status keluhan
+- tutupKeluhan() : menyelesaikan keluhan
+
+---
+
+## 6. Class Notifikasi
+
+Class Notifikasi berfungsi untuk menyimpan dan mengirim informasi otomatis kepada penghuni.
+
+### Attribute
+- idNotifikasi : identitas notifikasi
+- pesan : isi pesan notifikasi
+- tanggalKirim : tanggal pengiriman
+- jenis : jenis notifikasi
+
+### Method
+- kirimNotif() : mengirim notifikasi kepada penghuni
+
+---
+
+## 7. Class Tagihan
+
+Class Tagihan digunakan untuk menyimpan data tagihan bulanan penghuni.
+
+### Attribute
+- idTagihan : identitas tagihan
+- bulan : periode tagihan
+- totalTagihan : jumlah tagihan
+- jatuhTempo : batas pembayaran
+- status : status pembayaran tagihan
+
+### Method
+- generateTagihan() : membuat tagihan otomatis
+- ubahStatus() : mengubah status tagihan
+
+---
+
+## 8. Class Pembayaran
+
+Class Pembayaran digunakan untuk menyimpan data transaksi pembayaran penghuni.
+
+### Attribute
+- idPembayaran : identitas pembayaran
+- tanggalBayar : tanggal pembayaran
+- jumlah : nominal pembayaran
+- buktiTransfer : file bukti transfer
+- statusPembayaran : status pembayaran
+
+### Method
+- uploadBukti() : mengunggah bukti pembayaran
+- verifikasi() : memvalidasi pembayaran
+- cetakKuitansi() : membuat kuitansi digital
+
+---
+
+## 9. Class BiayaOperasional
+
+Class BiayaOperasional digunakan untuk mencatat pengeluaran operasional kos.
+
+### Attribute
+- idBiaya : identitas biaya
+- namaBiaya : nama pengeluaran
+- tanggal : tanggal pengeluaran
+- jumlah : nominal pengeluaran
+
+### Method
+- tambahBiaya() : menambahkan data pengeluaran
+
+---
+
+## 10. Class LaporanKeuangan
+
+Class LaporanKeuangan digunakan untuk merekap pemasukan dan pengeluaran kos.
+
+### Attribute
+- idLaporan : identitas laporan
+- periode : periode laporan
+- totalPemasukan : total pendapatan
+- totalPengeluaran : total biaya operasional
+- labaBersih : hasil keuntungan bersih
+
+### Method
+- generateLaporan() : membuat laporan keuangan
+- exportPDF() : mengunduh laporan dalam format PDF
+
+---
+
+# Penjelasan Relasi Antar Class
+
+## 1. Relasi Admin dengan Penghuni
+### Jenis Relasi
+One to Many (1..*)
+
+### Penjelasan
+Admin memiliki hubungan dengan Penghuni dalam proses pengelolaan data penghuni, seperti menambah, mengubah, dan menghapus data penghuni. Satu admin dapat mengelola banyak penghuni.
+
+---
+
+## 2. Relasi Admin dengan Kamar
+### Jenis Relasi
+One to Many (1..*)
+
+### Penjelasan
+Admin memiliki hubungan dengan Kamar dalam pengelolaan status dan informasi kamar kos. Satu admin dapat mengelola banyak kamar.
+
+---
+
+## 3. Relasi Admin dengan Keluhan
+### Jenis Relasi
+One to Many (1..*)
+
+### Penjelasan
+Admin memiliki hubungan dengan Keluhan dalam proses penanganan dan tindak lanjut laporan penghuni. Satu admin dapat menangani banyak keluhan.
+
+---
+
+## 4. Relasi Admin dengan LaporanKeuangan
+### Jenis Relasi
+One to Many (1..*)
+
+### Penjelasan
+Admin memiliki hubungan dengan LaporanKeuangan dalam proses pembuatan dan monitoring laporan keuangan kos. Satu admin dapat membuat banyak laporan keuangan.
+
+---
+
+## 5. Relasi Penghuni dengan Kamar
+### Jenis Relasi
+One to One (0..1 ke 1)
+
+### Penjelasan
+Penghuni memiliki hubungan dengan Kamar karena setiap penghuni menempati satu kamar kos. Relasi 0..1 menunjukkan bahwa penghuni bisa belum memiliki kamar atau hanya menempati satu kamar.
+
+---
+
+## 6. Relasi Penghuni dengan Pembayaran
+### Jenis Relasi
+One to Many (1..*)
+
+### Penjelasan
+Penghuni memiliki hubungan dengan Pembayaran karena penghuni dapat melakukan banyak pembayaran selama masa sewa kos.
+
+---
+
+## 7. Relasi Penghuni dengan Tagihan
+### Jenis Relasi
+One to Many (1..*)
+
+### Penjelasan
+Penghuni memiliki hubungan dengan Tagihan karena setiap penghuni memiliki beberapa tagihan pembayaran bulanan.
+
+---
+
+## 8. Relasi Penghuni dengan Keluhan
+### Jenis Relasi
+One to Many (1..*)
+
+### Penjelasan
+Penghuni memiliki hubungan dengan Keluhan karena penghuni dapat membuat banyak laporan kerusakan atau pengaduan fasilitas.
+
+---
+
+## 9. Relasi Notifikasi dengan Penghuni
+### Jenis Relasi
+Many to One (*..1)
+
+### Penjelasan
+Notifikasi memiliki hubungan dengan Penghuni karena sistem dapat mengirim banyak notifikasi kepada satu penghuni, seperti pengingat pembayaran atau informasi penting.
+
+---
+
+## 10. Relasi Tagihan dengan Pembayaran
+### Jenis Relasi
+One to One (1 ke 0..1)
+
+### Penjelasan
+Tagihan memiliki hubungan dengan Pembayaran karena satu tagihan hanya dapat dibayar dengan satu pembayaran atau belum dibayar sama sekali.
+
+---
+
+## 11. Relasi Keluhan dengan Teknisi
+### Jenis Relasi
+Many to One (*..1)
+
+### Penjelasan
+Keluhan memiliki hubungan dengan Teknisi karena satu teknisi dapat menangani banyak keluhan, sedangkan satu keluhan ditangani oleh maksimal satu teknisi.
+
+---
+
+## 12. Relasi LaporanKeuangan dengan Pembayaran
+### Jenis Relasi
+One to Many (1..*)
+
+### Penjelasan
+LaporanKeuangan memiliki hubungan dengan Pembayaran karena satu laporan keuangan mengambil data dari banyak transaksi pembayaran sebagai sumber pemasukan.
+
+---
+
+## 13. Relasi LaporanKeuangan dengan BiayaOperasional
+### Jenis Relasi
+One to Many (1..*)
+
+### Penjelasan
+LaporanKeuangan memiliki hubungan dengan BiayaOperasional karena satu laporan keuangan mengambil data dari banyak biaya operasional sebagai sumber pengeluaran.
+
+---
+
+
+
 # Kesimpulan
 
 Berdasarkan hasil wawancara dan analisis sistem yang sedang berjalan, dapat disimpulkan bahwa pengelolaan kos yang masih dilakukan secara manual menimbulkan berbagai permasalahan signifikan, seperti kesulitan dalam pencatatan dan pencarian data penghuni, ketidakefisienan dalam monitoring pembayaran, serta kurang optimalnya komunikasi antara pengelola dan penghuni. Permasalahan ini diperkuat oleh kondisi nyata di lapangan, seperti penggunaan buku tulis dan WhatsApp sebagai media utama, yang terbukti rentan terhadap kesalahan, kehilangan data, serta informasi yang terlewat.
