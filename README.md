@@ -309,7 +309,7 @@ Berikut adalah pemetaan aktor yang terlibat dalam Sistem Informasi Manajemen Kos
 
 ---
 
-### Diagram Use Case
+### Diagram Class
 
 <img width="1323" height="1161" alt="Diagram Class APBO" src="https://github.com/user-attachments/assets/9d84a93e-18b6-4ff5-bbb4-b2138bd53df9" />
 
