@@ -619,6 +619,7 @@ LaporanKeuangan memiliki hubungan dengan BiayaOperasional karena satu laporan ke
 
 ---
 
+# State Diagram
 
 
 # Kesimpulan
