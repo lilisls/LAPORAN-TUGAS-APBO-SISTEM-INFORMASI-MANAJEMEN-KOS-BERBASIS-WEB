@@ -601,7 +601,7 @@ Keluhan memiliki hubungan dengan Teknisi karena satu teknisi dapat menangani ban
 
 ---
 
-## 12. Relasi LaporanKeuangan dengan Pembayaran
+## 12. Relasi Laporan Keuangan dengan Pembayaran
 ### Jenis Relasi
 One to Many (1..*)
 
@@ -610,7 +610,7 @@ LaporanKeuangan memiliki hubungan dengan Pembayaran karena satu laporan keuangan
 
 ---
 
-## 13. Relasi LaporanKeuangan dengan BiayaOperasional
+## 13. Relasi Laporan Keuangan dengan Biaya Operasional
 ### Jenis Relasi
 One to Many (1..*)
 
@@ -623,11 +623,45 @@ LaporanKeuangan memiliki hubungan dengan BiayaOperasional karena satu laporan ke
 ## 1. Alur Pembayaran
 <img width="482" height="921" alt="APBO - State Diagram-Alur Pembayaran drawio" src="https://github.com/user-attachments/assets/92de1dab-2c4a-4b2f-8285-172b25083eb6" />
 
+**Tagihan Dibuat** - Sistem secara otomatis membuat tagihan bulanan untuk setiap penghuni. Status awal tagihan adalah "belum dibayar".
+
+**Menunggu Pembayaran** - Setelah jatuh tempo tiba, sistem mengirim notifikasi pengingat ke penghuni. Penghuni kemudian melakukan transfer dan mengunggah bukti pembayaran ke portal.
+
+**Menunggu Verifikasi** - Setelah bukti diunggah, status tagihan berubah otomatis menjadi "menunggu verifikasi". Admin menerima notifikasi dan melakukan pengecekan mutasi rekening.
+
+**Pembayaran Ditolak** - Jika bukti transfer tidak valid atau nominal tidak sesuai, admin menolak dan mengirim notifikasi alasan ke penghuni. Penghuni bisa mengulang proses upload dari awal.
+
+**Lunas** - Jika admin memverifikasi pembayaran berhasil, status tagihan berubah menjadi lunas dan sistem menerbitkan kuitansi digital otomatis.
+Riwayat Tersimpan - Data pembayaran yang sudah lunas otomatis masuk ke laporan keuangan dan tersimpan sebagai riwayat transaksi penghuni.
+
+
 ## 2. Alur Keluhan
-<img width="292" height="801" alt="APBO - State Diagram-Alur Keluhan drawio" src="https://github.com/user-attachments/assets/ba50422a-d963-4563-a3a7-7ac27a3617f4" />
+<img width="392" height="901" alt="APBO - State Diagram-Alur Keluhan drawio" src="https://github.com/user-attachments/assets/11defa14-c5f8-41f3-a53a-8b0913f8076e" />
+
+**Keluhan/Tiket Dibuat** - Penghuni membuat laporan keluhan baru dengan mengisi kategori kerusakan, deskripsi masalah, dan melampirkan foto bukti kerusakan.
+Antrean - Tiket masuk ke dashboard admin dengan status antrean. Admin melihat dan menilai keluhan untuk kemudian mengalokasikan teknisi yang sesuai.
+
+**Diproses** - Teknisi yang sudah dialokasikan mulai mengerjakan perbaikan. Status ini memberi tahu penghuni bahwa keluhannya sedang ditangani. Jika teknisi tidak bisa menyelesaikan, admin bisa menarik tiket kembali ke antrean untuk re-alokasi.
+
+**Menunggu Konfirmasi** - Teknisi selesai mengerjakan perbaikan dan melaporkan hasilnya ke admin. Admin melakukan verifikasi apakah perbaikan sudah benar-benar selesai. Jika belum, tiket dikembalikan ke state Diproses.
+
+**Selesai** - Admin menutup keluhan/tiket dan penghuni dapat melihat pembaruan status di portal mereka.
+
 
 ## 3. Alur Kamar
 <img width="397" height="921" alt="APBO - State Diagram-Alur Kamar drawio" src="https://github.com/user-attachments/assets/745cc08f-caa9-4f93-9188-9e0c79fa9fb3" />
+
+**Kosong** - Kamar dalam kondisi tersedia dan tampil di daftar kamar yang bisa dialokasikan. Admin bisa melihat detail kamar seperti tipe, harga, dan fasilitas.
+
+**Proses Onboardin**g - Admin menginput data lengkap penghuni baru seperti KTP, kontak darurat, durasi sewa, deposit, dan tanggal jatuh tempo. Jika proses dibatalkan, kamar kembali ke status kosong.
+
+**Dihuni** - Penghuni resmi check-in, status kamar terkunci sehingga tidak bisa dialokasikan ke orang lain. Akun penghuni aktif dan bisa menggunakan semua fitur sistem seperti pembayaran dan pengiriman keluhan.
+
+**Proses Check-out** - Penghuni mengajukan keluar dan admin melakukan inspeksi akhir kamar. Jika ada kerusakan, admin mencatat potongan dari deposit. Jika penghuni membatalkan check-out, status kamar kembali ke Dihuni.
+
+**Kamar Dikosongkan** - Proses check-out selesai dieksekusi admin. Data penghuni diarsipkan ke daftar alumni dan deposit dikembalikan atau dipotong sesuai hasil inspeksi.
+
+**Kosong (lagi)** - Status kamar direset kembali menjadi kosong dan siap untuk dialokasikan ke penghuni berikutnya. Siklus berulang dari awal.
 
 # Kesimpulan
 
