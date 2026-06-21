@@ -620,7 +620,14 @@ LaporanKeuangan memiliki hubungan dengan BiayaOperasional karena satu laporan ke
 ---
 
 # State Diagram
+## 1. Alur Pembayaran
+<img width="482" height="921" alt="APBO - State Diagram-Alur Pembayaran drawio" src="https://github.com/user-attachments/assets/92de1dab-2c4a-4b2f-8285-172b25083eb6" />
 
+## 2. Alur Keluhan
+<img width="292" height="801" alt="APBO - State Diagram-Alur Keluhan drawio" src="https://github.com/user-attachments/assets/ba50422a-d963-4563-a3a7-7ac27a3617f4" />
+
+## 3. Alur Kamar
+<img width="397" height="921" alt="APBO - State Diagram-Alur Kamar drawio" src="https://github.com/user-attachments/assets/745cc08f-caa9-4f93-9188-9e0c79fa9fb3" />
 
 # Kesimpulan
 
