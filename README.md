@@ -663,6 +663,22 @@ Antrean - Tiket masuk ke dashboard admin dengan status antrean. Admin melihat da
 
 **Kosong (lagi)** - Status kamar direset kembali menjadi kosong dan siap untuk dialokasikan ke penghuni berikutnya. Siklus berulang dari awal.
 
+# Sequence Diagram
+## 1. Pendaftaran Penghuni & Alokasi Kamar (Onboarding)
+<img width="801" height="420" alt="Diagram-Sequence 1-Pendaftaran Penghuni   Alokasi Kamar (Onboarding) drawio" src="https://github.com/user-attachments/assets/6a663758-a6cc-43bd-98e7-3cf79cca90eb" />
+
+## 2. Pelunasan Tagihan Sewa Bulanan
+<img width="964" height="825" alt="Diagram-Sequence 2-Pelunasan Tagihan Sewa Bulanan drawio" src="https://github.com/user-attachments/assets/c734f87f-4445-4f59-b05b-8ad8dcac7a1f" />
+
+## 3. Tiket Laporan Keluhan (Maintenance)
+<img width="795" height="594" alt="Diagram-Sequence 3-Tiket Laporan Keluhan (Maintenance) drawio" src="https://github.com/user-attachments/assets/6c03bd67-2b7c-40d2-95fe-76fd3cae7a9b" />
+
+## 4. Pengosongan Kamar (Proses Check-out)
+<img width="679" height="470" alt="Diagram-Sequence 4-Pengosongan Kamar (Proses Check-out) drawio" src="https://github.com/user-attachments/assets/fc8f8c25-bf1f-4958-b929-286fe77f26f1" />
+
+## 5. Rekapitulasi Keuangan & Operasional
+
+
 # Kesimpulan
 
 Berdasarkan hasil wawancara dan analisis sistem yang sedang berjalan, dapat disimpulkan bahwa pengelolaan kos yang masih dilakukan secara manual menimbulkan berbagai permasalahan signifikan, seperti kesulitan dalam pencatatan dan pencarian data penghuni, ketidakefisienan dalam monitoring pembayaran, serta kurang optimalnya komunikasi antara pengelola dan penghuni. Permasalahan ini diperkuat oleh kondisi nyata di lapangan, seperti penggunaan buku tulis dan WhatsApp sebagai media utama, yang terbukti rentan terhadap kesalahan, kehilangan data, serta informasi yang terlewat.
