@@ -709,16 +709,17 @@ Alur Proses:
 
 ## Activity Diagram
 
-# Activity Diagram Pendaftaran Penghuni dan Alokasi Kamar
+**1. Activity Diagram Pendaftaran Penghuni dan Alokasi Kamar**
+
 
 <img width="741" height="731" alt="1" src="https://github.com/user-attachments/assets/eab024e9-360b-4305-9e21-966329be1dd9" />
-uni.png)
+
 
 Activity Diagram ini menjelaskan proses pendaftaran penghuni baru dan alokasi kamar yang dilakukan oleh pengelola kos. Proses dimulai ketika pengelola membuka menu data kamar dan memilih kamar yang masih berstatus kosong. Selanjutnya pengelola menginput data penghuni seperti nama, nomor identitas, nomor telepon, dan informasi pendukung lainnya. Sistem kemudian melakukan pengecekan terhadap kelengkapan data yang dimasukkan. Jika data belum lengkap, sistem akan menampilkan pesan kesalahan dan pengelola diminta melengkapi data terlebih dahulu. Jika data sudah lengkap, sistem menyimpan data penghuni ke dalam database dan mengubah status kamar menjadi dihuni. Setelah proses berhasil, sistem menampilkan notifikasi bahwa pendaftaran penghuni telah berhasil dilakukan dan proses berakhir.
 
 ---
 
-# Activity Diagram Pelunasan Tagihan Sewa Bulanan
+**2. Activity Diagram Pelunasan Tagihan Sewa Bulanan**
 
 <img width="821" height="981" alt="2 drawio" src="https://github.com/user-attachments/assets/d08024c4-0046-40ea-be3e-c1b2a1d7cacf" />
 
@@ -726,7 +727,7 @@ Activity Diagram ini menjelaskan proses pembayaran tagihan kos oleh penghuni dan
 
 ---
 
-# Activity Diagram Laporan Keluhan
+**3. Activity Diagram Laporan Keluhan**
 
 <img width="955" height="1091" alt="3 drawio" src="https://github.com/user-attachments/assets/f13952eb-8daf-4298-950c-53cccbd5ba21" />
 
@@ -734,7 +735,7 @@ Activity Diagram ini menjelaskan proses penyampaian dan penanganan keluhan yang 
 
 ---
 
-# Activity Diagram Pengosongan Kamar (Check-Out)
+**4. Activity Diagram Pengosongan Kamar (Check-Out)**
 
 <img width="891" height="761" alt="4 drawio" src="https://github.com/user-attachments/assets/e256f70d-da1c-48f0-b7f6-d4a1d8aa86b1" />
 
@@ -743,7 +744,7 @@ Activity Diagram ini menjelaskan proses pengosongan kamar ketika penghuni akan m
 
 ---
 
-# Activity Diagram Rekapitulasi Keuangan dan Operasional
+**5. Activity Diagram Rekapitulasi Keuangan dan Operasional**
 
 <img width="791" height="931" alt="5 drawio" src="https://github.com/user-attachments/assets/5bd16b9d-bd82-4656-8720-e33df8209d57" />
 
