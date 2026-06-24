@@ -1,4 +1,4 @@
-# LAPORAN-TUGAS-APBO-SISTEM-INFORMASI-MANAJEMEN-KOS
+<img width="741" height="731" alt="1" src="https://github.com/user-attachments/assets/12dfa6d6-5a79-4bd5-b7e4-911125b790e2" /># LAPORAN-TUGAS-APBO-SISTEM-INFORMASI-MANAJEMEN-KOS
 
 ## Anggota Kelompok 3
 
@@ -704,6 +704,51 @@ Alur Proses:
 4. Sistem merender data keuangan dalam antarmuka grafik.
 5. Blok Opsional: Pengelola memicu fungsi export untuk mengunduh laporan dalam format PDF.
 <img width="899" height="791" alt="Diagram-Sequence 5-Rekapitulasi Keuangan   Operasional drawio" src="https://github.com/user-attachments/assets/f28e2fde-0c6e-4372-9522-e9f3db386dbc" />
+
+---
+
+# Activity Diagram
+
+## Activity Diagram Pendaftaran Penghuni dan Alokasi Kamar
+
+<img width="741" height="731" alt="1" src="https://github.com/user-attachments/assets/eab024e9-360b-4305-9e21-966329be1dd9" />
+uni.png)
+
+Activity Diagram ini menjelaskan proses pendaftaran penghuni baru dan alokasi kamar yang dilakukan oleh pengelola kos. Proses dimulai ketika pengelola membuka menu data kamar dan memilih kamar yang masih berstatus kosong. Selanjutnya pengelola menginput data penghuni seperti nama, nomor identitas, nomor telepon, dan informasi pendukung lainnya. Sistem kemudian melakukan pengecekan terhadap kelengkapan data yang dimasukkan. Jika data belum lengkap, sistem akan menampilkan pesan kesalahan dan pengelola diminta melengkapi data terlebih dahulu. Jika data sudah lengkap, sistem menyimpan data penghuni ke dalam database dan mengubah status kamar menjadi dihuni. Setelah proses berhasil, sistem menampilkan notifikasi bahwa pendaftaran penghuni telah berhasil dilakukan dan proses berakhir.
+
+---
+
+## Activity Diagram Pelunasan Tagihan Sewa Bulanan
+
+<img width="821" height="981" alt="2 drawio" src="https://github.com/user-attachments/assets/d08024c4-0046-40ea-be3e-c1b2a1d7cacf" />
+
+Activity Diagram ini menjelaskan proses pembayaran tagihan kos oleh penghuni dan proses verifikasi oleh pengelola. Proses dimulai ketika penghuni masuk ke sistem dan melihat tagihan yang harus dibayar. Selanjutnya penghuni melakukan pembayaran melalui transfer dan mengunggah bukti pembayaran ke dalam sistem. Sistem kemudian menyimpan bukti pembayaran dan mengubah status tagihan menjadi menunggu verifikasi. Pengelola menerima notifikasi adanya pembayaran baru dan melakukan pengecekan terhadap bukti pembayaran yang diunggah. Jika pembayaran tidak sesuai atau bukti pembayaran tidak valid, sistem mengubah status pembayaran menjadi ditolak dan penghuni diminta mengunggah ulang bukti pembayaran. Jika pembayaran valid, sistem mengubah status tagihan menjadi lunas dan menyimpan data pembayaran ke dalam riwayat transaksi. Setelah proses selesai, sistem menampilkan notifikasi bahwa pembayaran berhasil diverifikasi.
+
+---
+
+## Activity Diagram Laporan Keluhan
+
+<img width="955" height="1091" alt="3 drawio" src="https://github.com/user-attachments/assets/f13952eb-8daf-4298-950c-53cccbd5ba21" />
+
+Activity Diagram ini menjelaskan proses penyampaian dan penanganan keluhan yang dilakukan oleh penghuni dan pengelola kos. Proses dimulai ketika penghuni membuka menu keluhan dan mengisi formulir keluhan yang berisi kategori masalah, deskripsi kerusakan, serta foto pendukung apabila diperlukan. Setelah data dikirim, sistem menyimpan laporan keluhan dan mengubah status keluhan menjadi antrean. Pengelola kemudian melihat daftar keluhan yang masuk dan mulai melakukan penanganan terhadap keluhan tersebut. Selama proses penanganan berlangsung, sistem mengubah status keluhan menjadi diproses. Setelah masalah berhasil diselesaikan, pengelola menutup laporan keluhan dan sistem mengubah status menjadi selesai. Selanjutnya sistem mengirimkan notifikasi kepada penghuni bahwa keluhan telah ditangani dan proses berakhir.
+
+---
+
+## Activity Diagram Pengosongan Kamar (Check-Out)
+
+<img width="891" height="761" alt="4 drawio" src="https://github.com/user-attachments/assets/e256f70d-da1c-48f0-b7f6-d4a1d8aa86b1" />
+
+
+Activity Diagram ini menjelaskan proses pengosongan kamar ketika penghuni akan mengakhiri masa sewa. Proses dimulai ketika penghuni mengajukan permohonan check-out kepada pengelola. Selanjutnya pengelola melakukan pemeriksaan kondisi kamar untuk memastikan tidak terdapat kerusakan atau kewajiban yang belum diselesaikan. Jika ditemukan kerusakan, pengelola dapat mencatat biaya perbaikan yang diperlukan. Setelah proses pemeriksaan selesai, pengelola melakukan proses check-out pada sistem. Sistem kemudian mengarsipkan data penghuni dan mengubah status kamar dari dihuni menjadi kosong. Setelah seluruh proses selesai, kamar kembali tersedia untuk digunakan oleh penghuni berikutnya.
+
+---
+
+## Activity Diagram Rekapitulasi Keuangan dan Operasional
+
+<img width="791" height="931" alt="5 drawio" src="https://github.com/user-attachments/assets/5bd16b9d-bd82-4656-8720-e33df8209d57" />
+
+Activity Diagram ini menjelaskan proses pembuatan laporan keuangan yang digunakan oleh pengelola kos untuk memantau pemasukan dan pengeluaran. Proses dimulai ketika pengelola membuka menu laporan keuangan pada sistem. Sistem kemudian mengambil data pembayaran penghuni sebagai sumber pemasukan dan data biaya operasional sebagai sumber pengeluaran. Selanjutnya sistem melakukan perhitungan total pemasukan, total pengeluaran, serta laba atau selisih keuangan yang diperoleh. Berdasarkan hasil perhitungan tersebut, sistem menghasilkan laporan keuangan secara otomatis dan menampilkannya kepada pengelola. Pengelola dapat melihat ringkasan laporan maupun mengunduh laporan tersebut sebagai dokumentasi. Setelah laporan berhasil ditampilkan, proses berakhir.
+
 
 
 # Kesimpulan
