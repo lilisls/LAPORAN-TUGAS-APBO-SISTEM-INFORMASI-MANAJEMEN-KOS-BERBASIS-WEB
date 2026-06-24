@@ -679,9 +679,7 @@ Alur Proses:
 1. Penghuni memuat detail tagihan dan mengunggah bukti pembayaran.
 2. Sistem mengubah status tagihan menjadi "MENUNGGU VERIFIKASI".
 3. Pengelola memverifikasi bukti pembayaran.
-4. Blok Alternatif (Validasi):
-- Valid: Status diubah menjadi "LUNAS", sistem menerbitkan kuitansi, dan mengirimkannya ke penghuni.
-- Tidak Valid: Status dikembalikan ke "BELUM DIBAYAR" dan sistem mengirimkan notifikasi penolakan ke penghuni.
+4. Blok Alternatif (Validasi): <br> Valid: Status diubah menjadi "LUNAS", sistem menerbitkan kuitansi, dan mengirimkannya ke penghuni. <br> Tidak Valid: Status dikembalikan ke "BELUM DIBAYAR" dan sistem mengirimkan notifikasi penolakan ke penghuni.
 <img width="964" height="825" alt="Diagram-Sequence 2-Pelunasan Tagihan Sewa Bulanan drawio" src="https://github.com/user-attachments/assets/c734f87f-4445-4f59-b05b-8ad8dcac7a1f" />
 
 ## 3. Tiket Laporan Keluhan (Maintenance)
