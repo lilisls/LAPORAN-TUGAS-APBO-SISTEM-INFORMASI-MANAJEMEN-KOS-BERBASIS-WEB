@@ -1,4 +1,4 @@
-<img width="741" height="731" alt="1" src="https://github.com/user-attachments/assets/12dfa6d6-5a79-4bd5-b7e4-911125b790e2" /># LAPORAN-TUGAS-APBO-SISTEM-INFORMASI-MANAJEMEN-KOS
+# LAPORAN-TUGAS-APBO-SISTEM-INFORMASI-MANAJEMEN-KOS
 
 ## Anggota Kelompok 3
 
@@ -707,9 +707,9 @@ Alur Proses:
 
 ---
 
-# Activity Diagram
+## Activity Diagram
 
-## Activity Diagram Pendaftaran Penghuni dan Alokasi Kamar
+# Activity Diagram Pendaftaran Penghuni dan Alokasi Kamar
 
 <img width="741" height="731" alt="1" src="https://github.com/user-attachments/assets/eab024e9-360b-4305-9e21-966329be1dd9" />
 uni.png)
@@ -718,7 +718,7 @@ Activity Diagram ini menjelaskan proses pendaftaran penghuni baru dan alokasi ka
 
 ---
 
-## Activity Diagram Pelunasan Tagihan Sewa Bulanan
+# Activity Diagram Pelunasan Tagihan Sewa Bulanan
 
 <img width="821" height="981" alt="2 drawio" src="https://github.com/user-attachments/assets/d08024c4-0046-40ea-be3e-c1b2a1d7cacf" />
 
@@ -726,7 +726,7 @@ Activity Diagram ini menjelaskan proses pembayaran tagihan kos oleh penghuni dan
 
 ---
 
-## Activity Diagram Laporan Keluhan
+# Activity Diagram Laporan Keluhan
 
 <img width="955" height="1091" alt="3 drawio" src="https://github.com/user-attachments/assets/f13952eb-8daf-4298-950c-53cccbd5ba21" />
 
@@ -734,7 +734,7 @@ Activity Diagram ini menjelaskan proses penyampaian dan penanganan keluhan yang 
 
 ---
 
-## Activity Diagram Pengosongan Kamar (Check-Out)
+# Activity Diagram Pengosongan Kamar (Check-Out)
 
 <img width="891" height="761" alt="4 drawio" src="https://github.com/user-attachments/assets/e256f70d-da1c-48f0-b7f6-d4a1d8aa86b1" />
 
@@ -743,7 +743,7 @@ Activity Diagram ini menjelaskan proses pengosongan kamar ketika penghuni akan m
 
 ---
 
-## Activity Diagram Rekapitulasi Keuangan dan Operasional
+# Activity Diagram Rekapitulasi Keuangan dan Operasional
 
 <img width="791" height="931" alt="5 drawio" src="https://github.com/user-attachments/assets/5bd16b9d-bd82-4656-8720-e33df8209d57" />
 
