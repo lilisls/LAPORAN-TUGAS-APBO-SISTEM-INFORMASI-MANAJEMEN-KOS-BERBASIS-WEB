@@ -241,315 +241,84 @@ Informasi lebih teratur dan dapat diakses kembali kapan saja.
 
 ### Pemetaan Aktor & Hak Akses
 
-Berikut adalah pemetaan aktor yang terlibat dalam Sistem Informasi Manajemen Kos beserta hak akses dan fungsionalitasnya:
+Berikut adalah pemetaan aktor yang terlibat dalam Sistem Informasi Manajemen Kos beserta hak akses dan fungsionalitasnya berdasarkan dokumen perancangan resmi:
 
 | Peran (Aktor) | Ruang Lingkup Akses | Fungsionalitas Utama |
 | :--- | :--- | :--- |
-| **Pengelola (Admin)** | Memiliki akses penuh terhadap seluruh data dan fitur dalam sistem, termasuk data penghuni, kamar, pembayaran, dan laporan keuangan | • Mengelola data penghuni (tambah, ubah, hapus, dan pencarian) <br>• Mengelola data kamar dan status ketersediaan <br>• Memproses masuk/keluar penghuni (check-in & check-out) <br>• Memverifikasi pembayaran kos <br>• Melihat dashboard dan laporan keuangan <br>• Mengelola dan menanggapi keluhan penghuni <br>• Mengirim notifikasi atau pengingat pembayaran |
-| **Penghuni Kos (User)** | Memiliki akses terbatas pada data pribadi dan layanan yang berkaitan dengan kamar yang ditempati | • Melihat informasi kamar dan tagihan bulanan <br>• Mengunggah bukti pembayaran <br>• Melihat status dan riwayat pembayaran <br>• Mengirim keluhan atau pengaduan fasilitas <br>• Menerima notifikasi dan informasi penting |
-| **Sistem (Automated System)** | Bertindak sebagai aktor otomatis yang menjalankan proses sistem secara terintegrasi | • Menghasilkan tagihan bulanan secara otomatis <br>• Mengirim notifikasi pengingat pembayaran <br>• Menyimpan dan mengelola database secara terpusat <br>• Menampilkan data secara real-time pada dashboard <br>• Melakukan filtering data (misalnya penghuni yang belum membayar, status kamar, dll) |
+| **Pengelola Kos (Admin)** | Memiliki akses penuh terhadap seluruh data dan fitur dalam sistem, termasuk data penghuni, kamar, pembayaran, dan laporan keuangan. | * Mengelola data penghuni<br>* Mengelola data kamar dan status ketersediaan<br>* Memproses check-in dan check-out penghuni<br>* Memverifikasi pembayaran kos<br>* Melihat dashboard dan laporan keuangan<br>* Mengelola dan menanggapi keluhan penghuni<br>* Mengelola informasi dan notifikasi |
+| **Penghuni Kos (User)** | Memiliki akses terbatas pada data pribadi dan layanan yang berkaitan dengan kamar yang ditempati. | * Melihat informasi kamar dan tagihan bulanan<br>* Mengunggah bukti pembayaran<br>* Melihat status dan riwayat pembayaran<br>* Mengirim keluhan atau pengaduan fasilitas<br>* Menerima notifikasi dan informasi penting |
+
+---
 
 ### Detail Use Case
 
-#### 1. Pendaftaran Penghuni & Alokasi Kamar (Onboarding)
-**Aktor**: Pengelola (Admin)  
-**Tujuan**: Memasukkan data penyewa baru ke dalam database dan menetapkan unit kamar yang akan ditempati.  
-**Alur Interaksi**:
-1. Pengelola membuka menu *Manajemen Kamar* dan memfilter unit yang berstatus `[KOSONG]`.
-2. Pengelola menginput kelengkapan data diri penyewa (KTP, Kontak darurat).
-3. Pengelola menentukan durasi sewa, uang jaminan (deposit), dan tanggal jatuh tempo.
-
-**Output / Hasil Akhir**: Unit kamar terkunci dengan status `[DIHUNI]` dan akun portal untuk penyewa otomatis aktif.
+#### 1. Pendaftaran Penghuni dan Alokasi Kamar
+* **Aktor:** Pengelola Kos (Admin)  
+* **Tujuan:** Menambahkan data penghuni baru ke dalam sistem dan menetapkan kamar yang akan ditempati.  
+* **Alur Interaksi:**
+  1. Admin membuka menu manajemen kamar.
+  2. Admin memilih kamar yang masih berstatus kosong.
+  3. Admin menginput data penghuni, seperti identitas, kontak, durasi sewa, dan tanggal masuk.
+  4. Sistem menyimpan data penghuni.
+  5. Sistem mengubah status kamar menjadi dihuni.
+* **Output / Hasil Akhir:** Data penghuni tersimpan dalam sistem dan kamar berhasil dialokasikan.
 
 #### 2. Pelunasan Tagihan Sewa Bulanan
-**Aktor**: Penghuni & Pengelola  
-**Syarat Awal**: Sistem telah menerbitkan *invoice* tagihan berstatus `[BELUM DIBAYAR]`.  
-**Alur Interaksi**:
-1. Penghuni masuk ke portal, melihat nominal tagihan, lalu melakukan transfer dana.
-2. Penghuni melampirkan foto resi transfer ke dalam sistem.
-3. Status tagihan otomatis berubah menjadi `[MENUNGGU VERIFIKASI]`.
-4. Pengelola menerima peringatan sistem, mengecek mutasi rekening, dan menekan tombol *Verifikasi Lunas*.
+* **Aktor:** Penghuni Kos dan Pengelola Kos (Admin)  
+* **Tujuan:** Memfasilitasi proses pembayaran tagihan kos dan verifikasi pembayaran oleh admin.  
+* **Alur Interaksi:**
+  1. Penghuni membuka menu tagihan pada sistem.
+  2. Penghuni melihat nominal tagihan yang harus dibayar.
+  3. Penghuni melakukan pembayaran melalui transfer.
+  4. Penghuni mengunggah bukti pembayaran ke sistem.
+  5. Sistem mengubah status pembayaran menjadi menunggu verifikasi.
+  6. Admin memeriksa bukti pembayaran.
+  7. Admin menyetujui atau menolak pembayaran.
+* **Output / Hasil Akhir:** Status pembayaran diperbarui dan riwayat pembayaran tersimpan dalam sistem.
 
-**Output / Hasil Akhir**: Sistem menerbitkan kuitansi digital dan riwayat pembayaran penghuni tercatat sukses.
+#### 3. Laporan Keluhan Fasilitas
+* **Aktor:** Penghuni Kos dan Pengelola Kos (Admin)  
+* **Tujuan:** Memfasilitasi penghuni dalam menyampaikan keluhan fasilitas agar dapat terdokumentasi dan ditindaklanjuti oleh pengelola.  
+* **Alur Interaksi:**
+  1. Penghuni membuka menu keluhan.
+  2. Penghuni mengisi kategori keluhan dan deskripsi masalah.
+  3. Penghuni mengunggah foto pendukung jika diperlukan.
+  4. Sistem menyimpan laporan keluhan.
+  5. Admin melihat laporan keluhan yang masuk.
+  6. Admin menindaklanjuti keluhan dan memperbarui status penanganan.
+  7. Keluhan dinyatakan selesai setelah ditangani.
+* **Output / Hasil Akhir:** Keluhan tersimpan dalam sistem dan status penanganannya dapat dipantau.
 
-#### 3. Tiket Laporan Keluhan (Maintenance)
-**Aktor**: Penghuni & Pengelola  
-**Tujuan**: Memfasilitasi pelaporan fasilitas yang rusak (misal: AC bocor, kran mati) agar tidak terlewat oleh pengelola.  
-**Alur Interaksi**:
-1. Penghuni membuat tiket aduan baru dengan memilih kategori dan melampirkan foto kerusakan.
-2. Tiket masuk ke *dashboard* pengelola dengan status `[ANTREAN]`.
-3. Pengelola mengalokasikan teknisi/tukang dan mengubah status menjadi `[DIPROSES]`.
-4. Setelah masalah teratasi, pengelola menutup tiket aduan tersebut.
+#### 4. Pengosongan Kamar (Check-out)
+* **Aktor:** Pengelola Kos (Admin)  
+* **Tujuan:** Menyelesaikan masa tinggal penghuni dan mengubah status kamar agar dapat digunakan kembali.  
+* **Alur Interaksi:**
+  1. Penghuni mengajukan atau menginformasikan rencana check-out kepada admin.
+  2. Admin melakukan pemeriksaan kamar.
+  3. Admin menyelesaikan administrasi akhir penghuni.
+  4. Sistem mengarsipkan data penghuni.
+  5. Sistem mengubah status kamar menjadi kosong.
+* **Output / Hasil Akhir:** Data penghuni diarsipkan dan status kamar berubah menjadi kosong.
 
-**Output / Hasil Akhir**: Status tiket menjadi `[SELESAI]` dan penghuni bisa melihat pembaruannya di portal mereka.
+#### 5. Rekapitulasi Keuangan dan Operasional
+* **Aktor:** Pengelola Kos (Admin)  
+* **Tujuan:** Membantu pengelola mengetahui pemasukan, pengeluaran, dan kondisi keuangan kos secara lebih terstruktur.  
+* **Alur Interaksi:**
+  1. Admin membuka menu laporan keuangan.
+  2. Admin mencatat biaya operasional kos.
+  3. Sistem mengambil data pembayaran yang sudah diverifikasi.
+  4. Sistem menghitung total pemasukan dan pengeluaran.
+  5. Sistem menghasilkan laporan keuangan.
+* **Output / Hasil Akhir:** Laporan keuangan dan operasional dapat ditampilkan atau diunduh oleh admin.
 
-#### 4. Pengosongan Kamar (Proses Check-out)
-**Aktor**: Pengelola (Admin)  
-**Tujuan**: Menyelesaikan masa sewa penghuni, menangani deposit, dan menyiapkan kamar untuk penyewa berikutnya.  
-**Alur Interaksi**:
-1. Penghuni mengonfirmasi masa akhir sewa kepada pengelola.
-2. Pengelola melakukan inspeksi final kamar. Jika ada kerusakan berat, pengelola mencatat potongan dari uang deposit.
-3. Pengelola menekan eksekusi *Check-out* pada profil penghuni.
-
-**Output / Hasil Akhir**: Data penghuni diarsipkan ke daftar *Alumni*, dan status kamar dikembalikan menjadi `[KOSONG]`.
-
-#### 5. Rekapitulasi Keuangan & Operasional
-**Aktor**: Pengelola (Admin)  
-**Tujuan**: Menghitung laba/rugi bulanan dari bisnis kost.  
-**Alur Interaksi**:
-1. Pengelola mencatat semua biaya operasional bulanan (Token listrik induk, iuran sampah, biaya perbaikan).
-2. Sistem mengakumulasikan total pengeluaran tersebut.
-3. Sistem membandingkannya dengan total pemasukan dari sewa kamar bulan itu.
-
-**Output / Hasil Akhir**: Terbentuk grafik atau laporan bersih laba/rugi yang bisa diunduh oleh pengelola.
+---
 
 ### Diagram Use Case
 
-<img width="631" height="620" alt="Screenshot 2026-04-29 195457" src="https://github.com/user-attachments/assets/b181a0a0-3c3c-4e8a-88a6-2306ad5d2035" />
+Di bawah ini adalah representasi visual dari hubungan interaksi antar aktor terhadap fungsi-fungsi di dalam Sistem Informasi Manajemen Kos:
 
----
+<img width="772" height="628" alt="Screenshot 2026-06-24 233816" src="https://github.com/user-attachments/assets/51ec9166-cb00-43d4-b024-a163c4089f0c" />
 
-### Diagram Class
-
-<img width="1050" height="1306" alt="Diagram Class SI Manajemen Kost (APBO) drawio" src="https://github.com/user-attachments/assets/7606b8c6-b6f2-46c4-b13e-8f123fe359aa" />
-
-
----
-
-# Dokumentasi Perancangan Sistem
-
-## Penjelasan Diagram Class
-
-Diagram Class pada Sistem Informasi Manajemen Kos Berbasis Web digunakan untuk menggambarkan struktur data statis, spesifikasi kelas, atribut, fungsi (method), serta hubungan (relationship) antar objek secara terintegrasi. 
-
-Sesuai dengan prinsip enkapsulasi pada Pemrograman Berorientasi Objek (OOP), seluruh atribut diatur sebagai Private untuk mengamankan data internal dari akses langsung luar kelas, sedangkan method/fungsi diatur sebagai Public agar dapat dieksekusi oleh sistem atau antarmuka pengguna (UI).
-
----
-
-## 1. Class Admin
-Class Admin merepresentasikan pengelola kos yang memegang hak akses penuh terhadap sistem untuk mengontrol seluruh aktivitas operasional dan administrasi.
-
-### Atribut (Private)
-* idAdmin : int — Identitas unik sistem untuk admin
-* nama : string — Nama lengkap pengelola kos
-* username : string — Kredensial unik untuk hak akses masuk admin
-* password : string — Kata sandi akun admin (terenkripsi)
-* noHp : string — Nomor telepon pengelola yang aktif
-
-### Method (Public)
-* login() — Memvalidasi kredensial masuk admin ke sistem
-* kelolaKamar() — Melakukan operasi CRUD (Create, Read, Update, Delete) pada data kamar
-* kelolaPenghuni() — Mengelola data registrasi, profil, dan status tinggal penghuni
-* verifikasiBayar() — Memeriksa dan menyetujui validitas bukti pembayaran sewa
-* lihatLaporan() — Mengakses visualisasi dashboard dan rekapitulasi keuangan kos
-* tanganiKeluhan() — Mengalokasikan atau memperbarui status penanganan laporan kerusakan
-* kirimNotifikasi() — Memicu pengiriman pengumuman atau pengingat tagihan ke penghuni
-
----
-
-## 2. Class Penghuni
-Class Penghuni merepresentasikan penyewa kamar kos yang menggunakan sistem secara mandiri untuk mengakses layanan sewa, transaksi, dan pengaduan.
-
-### Atribut (Private)
-* idPenghuni : int — Identitas unik sistem untuk penghuni
-* nama : string — Nama lengkap penghuni sesuai kartu identitas
-* alamat : string — Alamat asal penghuni sesuai KTP
-* noHp : string — Nomor telepon seluler penghuni yang dapat dihubungi
-* noKTP : string — Nomor Induk Kependudukan (NIK) resmi penyewa
-* kontakDarurat : string — Nomor telepon kerabat dekat jika terjadi situasi darurat
-* tglMasuk : date — Tanggal resmi dimulainya kontrak sewa kamar
-* tglKeluar : date — Tanggal berakhirnya kontrak sewa atau rencana check-out
-* username : string — Kredensial unik akun penghuni
-* password : string — Kata sandi keamanan akun penghuni
-
-### Method (Public)
-* login() — Memproses autentikasi masuk penghuni ke platform
-* uploadPembayaran() — Mengirim dan menyimpan berkas digital bukti transfer bank
-* kirimKeluhan() — Membuat formulir pengaduan terkait kerusakan fasilitas kos
-* lihatTagihan() — Menampilkan rincian nominal tagihan aktif bulan berjalan
-* lihatRiwayat() — Mengakses daftar transaksi pembayaran yang pernah dilakukan sebelumnya
-
----
-
-## 3. Class Teknisi
-Class Teknisi digunakan untuk mendata pekerja lapangan yang bertanggung jawab melakukan perbaikan fisik berdasarkan eskalasi keluhan fasilitas.
-
-### Atribut (Private)
-* idTeknisi : int — Identitas unik sistem untuk teknisi
-* nama : string — Nama lengkap teknisi
-* noHp : string — Nomor kontak teknisi untuk koordinasi perbaikan
-* bidang : string — Keahlian spesifik teknisi (misal: Kelistrikan, Plambing, Elektronik)
-
-### Method (Public)
-* perbaikiFasilitas() — Mengubah status penanganan kerja teknisi pada fasilitas terkait
-
----
-
-## 4. Class Kamar
-Class Kamar merepresentasikan data fisik entitas unit kamar kos yang disewakan.
-
-### Atribut (Private)
-* idKamar : int — Identitas unik untuk tiap unit kamar
-* nomorKamar : string — Kode unik atau nomor penanda kamar (misal: A01, B05)
-* tipeKamar : string — Kategori kelas kamar (misal: Deluxe, Standard, VIP)
-* harga : double — Nominal tarif biaya sewa per bulan
-* status : string — Indikator ketersediaan kamar (misal: Kosong, Dihuni, Pemeliharaan)
-* fasilitas : string — Daftar inventaris bawaan di dalam kamar
-
-### Method (Public)
-* ubahStatus() — Memperbarui indikator ketersediaan unit kamar secara otomatis/manual
-* tampilInfo() — Menyajikan rincian spesifikasi lengkap kamar kepada pengguna
-
----
-
-## 5. Class Keluhan
-Class Keluhan digunakan untuk mencatat, menampung, dan melacak status penyelesaian masalah sarana kos yang dikeluhkan pengguna.
-
-### Atribut (Private)
-* idKeluhan : int — Nomor tiket unik pengaduan keluhan
-* kategori : string — Jenis area keluhan (misal: Air, Fasilitas Kamar, Fasilitas Umum)
-* deskripsi : string — Penjelasan kronologi atau detail kerusakan sarana
-* foto : string — Jalur penyimpanan (path/URL) file foto bukti kerusakan
-* status : string — Status progres pelaporan (misal: Antrean, Diproses, Selesai)
-* tanggalKeluhan : date — Waktu (stempel tanggal) pengaduan dikirim pertama kali
-
-### Method (Public)
-* buatKeluhan() — Menyimpan data laporan pengaduan baru dari penghuni ke database
-* updateStatus() — Memperbarui alur penanganan keluhan oleh pihak pengelola
-* tutupKeluhan() — Mengunci status tiket aduan menjadi selesai jika perbaikan rampung
-
----
-
-## 6. Class Notifikasi
-Class Notifikasi berfungsi sebagai mesin pengelola pesan atau pengingat berkala yang dihasilkan oleh sistem.
-
-### Atribut (Private)
-* idNotifikasi : int — Identitas unik rekaman notifikasi
-* pesan : string — Teks isi pesan/informasi penting yang dikirimkan
-* tanggalKirim : datetime — Log waktu pengiriman pesan
-* jenis : string — Kategori pesan (misal: Peringatan Tagihan, Pengumuman Bersama)
-
-### Method (Public)
-* kirimNotif() — Menyebarkan atau menampilkan pesan notifikasi ke akun tujuan
-
----
-
-## 7. Class Tagihan
-Class Tagihan menyimpan akumulasi nilai finansial berkala yang wajib dilunasi oleh penghuni sesuai siklus sewa.
-
-### Atribut (Private)
-* idTagihan : int — Nomor invoice unik lembar tagihan
-* bulan : string — Periode siklus tagihan bulanan (misal: Oktober 2026)
-* totalTagihan : double — Jumlah nominal uang yang harus dibayarkan
-* jatuhTempo : date — Batas waktu akhir pembayaran sebelum dikenai sanksi/teguran
-* status : string — Kondisi tagihan saat ini (misal: Belum Dibayar, Lunas)
-
-### Method (Public)
-* generateTagihan() — Menghasilkan lembar tagihan otomatis berdasarkan waktu jatuh tempo sewa
-* ubahStatus() — Mengubah parameter tagihan menjadi lunas pasca verifikasi admin
-
----
-
-## 8. Class Pembayaran
-Class Pembayaran mencatat seluruh riwayat pembuktian transaksi finansial yang diajukan penghuni sebagai pelunasan tagihan.
-
-### Atribut (Private)
-* idPembayaran : int — Identitas unik untuk tiap transaksi masuk
-* tanggalBayar : date — Log tanggal penghuni mengirimkan pembayaran
-* jumlah : double — Nominal uang tunai/transfer yang didepositkan
-* buktiTransfer : string — Jalur berkas gambar/dokumen bukti transfer bank
-* statusPembayaran : string — Status validasi transaksi (misal: Menunggu Verifikasi, Disetujui, Ditolak)
-
-### Method (Public)
-* uploadBukti() — Mengunggah file tanda transfer dari sisi user
-* verifikasi() — Mengubah status peninjauan keabsahan dana oleh admin
-* cetakKuitansi() — Menghasilkan dokumen kuitansi digital resmi berformat cetak
-
----
-
-## 9. Class BiayaOperasional
-Class BiayaOperasional berfungsi mencatat arus kas keluar (cash outflow) di luar pengeluaran pribadi penyewa untuk kebutuhan operasional rumah kos.
-
-### Atribut (Private)
-* idBiaya : int — Identitas unik pos pengeluaran operasional
-* namaBiaya : string — Nama deskripsi alokasi biaya (misal: Tagihan Listrik Induk, Gaji Teknisi)
-* tanggal : date — Tanggal terjadinya pengeluaran kas
-* jumlah : double — Nominal uang kas kos yang dikeluarkan
-
-### Method (Public)
-* tambahBiaya() — Menambahkan pencatatan pos biaya pengeluaran operasional baru
-
----
-
-## 10. Class LaporanKeuangan
-Class LaporanKeuangan berfungsi merekapitulasi seluruh kalkulasi neraca laba-rugi bisnis kos pada jangka waktu berkala.
-
-### Atribut (Private)
-* idLaporan : int — Identitas unik berkas laporan keuangan
-* periode : string — Rentang jangka laporan (misal: Triwulan I - 2026)
-* totalPemasukan : double — Akumulasi dana transaksi pembayaran sewa yang sah/lunas
-* totalPengeluaran : double — Akumulasi pengeluaran dari seluruh Biaya Operasional
-* labaBersih : double — Hasil perhitungan laba bersih (Total Pemasukan - Total Pengeluaran)
-
-### Method (Public)
-* generateLaporan() — Memproses kalkulasi otomatis pemasukan dan pengeluaran berkala
-* exportPDF() — Mengompilasi dan mengunduh berkas laporan keuangan ke format cetak PDF
-
----
-
-## Penjelasan Relasi Antar Class
-
-### 1. Relasi Admin dengan Penghuni
-* **Jenis Relasi:** One to Many (1..*)
-* **Penjelasan:** Admin memiliki hubungan dengan Penghuni dalam proses pengelolaan data penghuni, seperti menambah, mengubah, dan menghapus data penghuni. Satu admin dapat mengelola banyak penghuni.
-
-### 2. Relasi Admin dengan Kamar
-* **Jenis Relasi:** One to Many (1..*)
-* **Penjelasan:** Admin memiliki hubungan dengan Kamar dalam pengelolaan status dan informasi kamar kos. Satu admin dapat mengelola banyak kamar.
-
-### 3. Relasi Admin dengan Keluhan
-* **Jenis Relasi:** One to Many (1..*)
-* **Penjelasan:** Admin memiliki hubungan dengan Keluhan dalam proses penanganan dan tindak lanjut laporan penghuni. Satu admin dapat menangani banyak keluhan.
-
-### 4. Relasi Admin dengan LaporanKeuangan
-* **Jenis Relasi:** One to Many (1..*)
-* **Penjelasan:** Admin memiliki hubungan dengan LaporanKeuangan dalam proses pembuatan dan monitoring laporan keuangan kos. Satu admin dapat membuat banyak laporan keuangan.
-
-### 5. Relasi Penghuni dengan Kamar
-* **Jenis Relasi:** One to One (0..1 ke 1)
-* **Penjelasan:** Penghuni memiliki hubungan dengan Kamar karena setiap penghuni menempati satu kamar kos. Relasi 0..1 menunjukkan bahwa penghuni bisa belum memiliki kamar atau hanya menempati satu kamar.
-
-### 6. Relasi Penghuni dengan Pembayaran
-* **Jenis Relasi:** One to Many (1..*)
-* **Penjelasan:** Penghuni memiliki hubungan dengan Pembayaran karena penghuni dapat melakukan banyak pembayaran selama masa sewa kos.
-
-### 7. Relasi Penghuni dengan Tagihan
-* **Jenis Relasi:** One to Many (1..*)
-* **Penjelasan:** Penghuni memiliki hubungan dengan Tagihan karena setiap penghuni memiliki beberapa tagihan pembayaran bulanan.
-
-### 8. Relasi Penghuni dengan Keluhan
-* **Jenis Relasi:** One to Many (1..*)
-* **Penjelasan:** Penghuni memiliki hubungan dengan Keluhan karena penghuni dapat membuat banyak laporan kerusakan atau pengaduan fasilitas.
-
-### 9. Relasi Notifikasi dengan Penghuni
-* **Jenis Relasi:** Many to One (*..1)
-* **Penjelasan:** Notifikasi memiliki hubungan dengan Penghuni karena sistem dapat mengirim banyak notifikasi kepada satu penghuni, seperti pengingat pembayaran atau informasi penting.
-
-### 10. Relasi Tagihan dengan Pembayaran
-* **Jenis Relasi:** One to One (1 ke 0..1)
-* **Penjelasan:** Tagihan memiliki hubungan dengan Pembayaran karena satu tagihan hanya dapat dibayar dengan satu pembayaran atau belum dibayar sama sekali.
-
-### 11. Relasi Keluhan dengan Teknisi
-* **Jenis Relasi:** Many to One (*..1)
-* **Penjelasan:** Keluhan memiliki hubungan dengan Teknisi karena satu teknisi dapat menangani banyak keluhan, sedangkan satu keluhan ditangani oleh maksimal satu teknisi.
-
-### 12. Relasi LaporanKeuangan dengan Pembayaran
-* **Jenis Relasi:** One to Many (1..*)
-* **Penjelasan:** LaporanKeuangan memiliki hubungan dengan Pembayaran karena satu laporan keuangan mengambil data dari banyak transaksi pembayaran sebagai sumber pemasukan.
-
-### 13. Relasi LaporanKeuangan dengan BiayaOperasional
-* **Jenis Relasi:** One to Many (1..*)
-* **Penjelasan:** LaporanKeuangan memiliki hubungan dengan BiayaOperasional karena satu laporan keuangan mengambil data dari banyak biaya operasional sebagai sumber pengeluaran.
 
 ---
 
