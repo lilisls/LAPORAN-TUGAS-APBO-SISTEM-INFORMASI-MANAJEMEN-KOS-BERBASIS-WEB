@@ -620,9 +620,9 @@ LaporanKeuangan memiliki hubungan dengan BiayaOperasional karena satu laporan ke
 ---
 
 # State Diagram
-## 1. Alur Pembayaran
-<img width="482" height="921" alt="APBO - State Diagram-Alur Pembayaran drawio" src="https://github.com/user-attachments/assets/92de1dab-2c4a-4b2f-8285-172b25083eb6" />
+<img width="1247" height="941" alt="APBO - State Diagram-Mix" src="https://github.com/user-attachments/assets/399bf998-f7a1-4177-9d70-54109ff0051d" />
 
+## 1. Alur Pembayaran
 **Tagihan Dibuat** - Sistem secara otomatis membuat tagihan bulanan untuk setiap penghuni. Status awal tagihan adalah "belum dibayar".
 
 **Menunggu Pembayaran** - Setelah jatuh tempo tiba, sistem mengirim notifikasi pengingat ke penghuni. Penghuni kemudian melakukan transfer dan mengunggah bukti pembayaran ke portal.
@@ -634,10 +634,7 @@ LaporanKeuangan memiliki hubungan dengan BiayaOperasional karena satu laporan ke
 **Lunas** - Jika admin memverifikasi pembayaran berhasil, status tagihan berubah menjadi lunas dan sistem menerbitkan kuitansi digital otomatis.
 Riwayat Tersimpan - Data pembayaran yang sudah lunas otomatis masuk ke laporan keuangan dan tersimpan sebagai riwayat transaksi penghuni.
 
-
 ## 2. Alur Keluhan
-<img width="392" height="901" alt="APBO - State Diagram-Alur Keluhan drawio" src="https://github.com/user-attachments/assets/11defa14-c5f8-41f3-a53a-8b0913f8076e" />
-
 **Keluhan/Tiket Dibuat** - Penghuni membuat laporan keluhan baru dengan mengisi kategori kerusakan, deskripsi masalah, dan melampirkan foto bukti kerusakan.
 Antrean - Tiket masuk ke dashboard admin dengan status antrean. Admin melihat dan menilai keluhan untuk kemudian mengalokasikan teknisi yang sesuai.
 
@@ -647,10 +644,7 @@ Antrean - Tiket masuk ke dashboard admin dengan status antrean. Admin melihat da
 
 **Selesai** - Admin menutup keluhan/tiket dan penghuni dapat melihat pembaruan status di portal mereka.
 
-
 ## 3. Alur Kamar
-<img width="397" height="921" alt="APBO - State Diagram-Alur Kamar drawio" src="https://github.com/user-attachments/assets/745cc08f-caa9-4f93-9188-9e0c79fa9fb3" />
-
 **Kosong** - Kamar dalam kondisi tersedia dan tampil di daftar kamar yang bisa dialokasikan. Admin bisa melihat detail kamar seperti tipe, harga, dan fasilitas.
 
 **Proses Onboardin**g - Admin menginput data lengkap penghuni baru seperti KTP, kontak darurat, durasi sewa, deposit, dan tanggal jatuh tempo. Jika proses dibatalkan, kamar kembali ke status kosong.
