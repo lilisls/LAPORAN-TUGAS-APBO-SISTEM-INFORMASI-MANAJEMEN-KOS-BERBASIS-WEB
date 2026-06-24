@@ -620,7 +620,7 @@ LaporanKeuangan memiliki hubungan dengan BiayaOperasional karena satu laporan ke
 ---
 
 # State Diagram
-<img width="1247" height="941" alt="APBO - State Diagram-Mix" src="https://github.com/user-attachments/assets/399bf998-f7a1-4177-9d70-54109ff0051d" />
+<img width="1247" height="941" alt="APBO - State Diagram-Mix (1)" src="https://github.com/user-attachments/assets/ef7c0b23-9f03-4346-afcd-f4ce2c7e9987" />
 
 ## 1. Alur Pembayaran
 **Tagihan Dibuat** - Sistem secara otomatis membuat tagihan bulanan untuk setiap penghuni. Status awal tagihan adalah "belum dibayar".
