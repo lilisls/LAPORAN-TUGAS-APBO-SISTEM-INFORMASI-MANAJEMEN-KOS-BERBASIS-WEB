@@ -622,6 +622,81 @@ Alur Proses:
 
 ---
 
+# State Diagram
+<img width="1577" height="1189" alt="APBO - State Diagram-Mix drawio" src="https://github.com/user-attachments/assets/ee8daea0-391c-4163-b502-e182261f299b" />
+
+## 1. Alur Pembayaran
+**Tagihan Dibuat**  
+Sistem secara otomatis membuat tagihan bulanan untuk setiap penghuni. Status awal tagihan adalah "belum dibayar".
+
+**Menunggu Pembayaran**  
+Setelah jatuh tempo tiba, sistem mengirim notifikasi pengingat ke penghuni. Penghuni kemudian melakukan transfer dan mengunggah bukti pembayaran ke portal.
+
+**Menunggu Verifikasi**  
+Setelah bukti diunggah, status tagihan berubah otomatis menjadi "menunggu verifikasi". Admin menerima notifikasi dan melakukan pengecekan mutasi rekening.
+
+**Pembayaran Ditolak**  
+Jika bukti transfer tidak valid atau nominal tidak sesuai, admin menolak dan mengirim notifikasi alasan ke penghuni. Penghuni bisa mengulang proses upload dari awal.
+
+**Lunas**  
+Jika admin memverifikasi pembayaran berhasil, status tagihan berubah menjadi lunas dan sistem menerbitkan kuitansi digital otomatis.
+
+**Riwayat Tersimpan**  
+Data pembayaran yang sudah lunas otomatis masuk ke laporan keuangan dan tersimpan sebagai riwayat transaksi penghuni.
+
+## 2. Alur Keluhan
+**Keluhan Dibuat**  
+Penghuni membuat laporan keluhan baru dengan mengisi kategori kerusakan, deskripsi masalah, dan melampirkan foto bukti kerusakan.
+
+**Antrean**  
+Keluhan masuk ke dashboard admin dengan status antrean. Admin melihat dan menilai keluhan untuk kemudian mengalokasikan teknisi yang sesuai.
+
+**Diproses**  
+Teknisi yang sudah dialokasikan mulai mengerjakan perbaikan. Status ini memberi tahu penghuni bahwa keluhannya sedang ditangani. Jika teknisi tidak bisa menyelesaikan, admin bisa menarik tiket kembali ke antrean untuk re-alokasi.
+
+**Menunggu Konfirmasi**  
+Teknisi selesai mengerjakan perbaikan dan melaporkan hasilnya ke admin. Admin melakukan verifikasi apakah perbaikan sudah benar-benar selesai. Jika belum, tiket dikembalikan ke state Diproses.
+
+**Selesai**  
+Admin menutup keluhan/tiket dan penghuni dapat melihat pembaruan status di portal mereka.
+
+## 3. Alur Kamar
+**Kosong**  
+Kamar dalam kondisi tersedia dan tampil di daftar kamar yang bisa dialokasikan. Admin bisa melihat detail kamar seperti tipe, harga, dan fasilitas.
+
+**Proses Onboarding**  
+Admin menginput data lengkap penghuni baru seperti KTP, kontak darurat, durasi sewa, deposit, dan tanggal jatuh tempo. Jika proses dibatalkan, kamar kembali ke status kosong.
+
+**Dihuni**  
+Penghuni resmi check-in, status kamar terkunci sehingga tidak bisa dialokasikan ke orang lain. Akun penghuni aktif dan bisa menggunakan semua fitur sistem seperti pembayaran dan pengiriman keluhan.
+
+**Proses Check-out**  
+Penghuni mengajukan keluar dan admin melakukan inspeksi akhir kamar. Jika ada kerusakan, admin mencatat potongan dari deposit. Jika penghuni membatalkan check-out, status kamar kembali ke Dihuni.
+
+**Kamar Dikosongkan**  
+Proses check-out selesai dieksekusi admin. Data penghuni diarsipkan ke daftar alumni dan deposit dikembalikan atau dipotong sesuai hasil inspeksi.
+
+**Kosong (lagi)**  
+Status kamar direset kembali menjadi kosong dan siap untuk dialokasikan ke penghuni berikutnya. Siklus berulang dari awal.
+
+## 4. Alur Notifikasi
+**Draft**  
+State awal ketika admin membuat notifikasi atau pengingat di dalam sistem. Notifikasi belum dikirimkan ke penghuni, masih dalam tahap penyusunan konten oleh admin.
+
+**Dijadwalkan**  
+Notifikasi sudah selesai dibuat dan dijadwalkan untuk dikirim pada waktu tertentu. Misalnya pengingat pembayaran yang dijadwalkan dikirim H-3 sebelum jatuh tempo.
+
+**Dikirim**  
+Sistem berhasil mengirimkan notifikasi ke penghuni. Pada state ini notifikasi sudah masuk ke portal penghuni, namun belum tentu sudah dibuka atau dibaca.
+
+**Diterima**  
+Notifikasi berhasil diterima di sisi penghuni. State ini mengonfirmasi bahwa pengiriman tidak gagal dan notifikasi sudah tersedia untuk dilihat penghuni.
+
+**Dibaca**  
+Penghuni membuka dan membaca notifikasi. State ini penting untuk admin agar bisa memantau apakah informasi atau pengingat sudah benar-benar sampai dan diperhatikan oleh penghuni.
+
+**Kadaluwarsa**  
+Jika notifikasi melewati masa berlakunya tanpa dibaca oleh penghuni, maka statusnya berubah menjadi kadaluwarsa. Misalnya pengingat pembayaran yang tidak dibaca padahal sudah lewat jatuh tempo.
 
 ## Kesimpulan
 
