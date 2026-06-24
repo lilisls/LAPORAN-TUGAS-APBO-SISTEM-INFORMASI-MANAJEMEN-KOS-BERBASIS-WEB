@@ -659,18 +659,51 @@ Antrean - Tiket masuk ke dashboard admin dengan status antrean. Admin melihat da
 
 # Sequence Diagram
 ## 1. Pendaftaran Penghuni & Alokasi Kamar (Onboarding)
+### Pencatatan data penghuni baru dan pembaruan status ketersediaan kamar.
+Alur Proses:
+1. Pengelola memuat daftar kamar dengan status "KOSONG".
+2. Pengelola menginput data calon penghuni (biodata, deposit, jatuh tempo).
+3. Sistem membuat entri data penghuni baru ke dalam database.
+4. Sistem mengubah status kamar terkait menjadi "DIHUNI".
 <img width="801" height="420" alt="Diagram-Sequence 1-Pendaftaran Penghuni   Alokasi Kamar (Onboarding) drawio" src="https://github.com/user-attachments/assets/6a663758-a6cc-43bd-98e7-3cf79cca90eb" />
 
 ## 2. Pelunasan Tagihan Sewa Bulanan
+### Mekanisme pembayaran sewa oleh penghuni dan proses validasi oleh pengelola.
+Alur Proses:
+1. Penghuni memuat detail tagihan dan mengunggah bukti pembayaran.
+2. Sistem mengubah status tagihan menjadi "MENUNGGU VERIFIKASI".
+3. Pengelola memverifikasi bukti pembayaran.
+4. Blok Alternatif (Validasi): <br> Valid: Status diubah menjadi "LUNAS", sistem menerbitkan kuitansi, dan mengirimkannya ke penghuni. <br> Tidak Valid: Status dikembalikan ke "BELUM DIBAYAR" dan sistem mengirimkan notifikasi penolakan ke penghuni.
 <img width="964" height="825" alt="Diagram-Sequence 2-Pelunasan Tagihan Sewa Bulanan drawio" src="https://github.com/user-attachments/assets/c734f87f-4445-4f59-b05b-8ad8dcac7a1f" />
 
 ## 3. Tiket Laporan Keluhan (Maintenance)
+### Alur pengajuan, penugasan, dan penyelesaian kendala fasilitas kamar.
+Alur Proses:
+1. Penghuni mengirimkan data keluhan (kategori, deskripsi, foto).
+2. Sistem mencatat keluhan dengan status awal "ANTREAN".
+3. Pengelola merespons tiket (status berubah menjadi "DIPROSES") dan meneruskan instruksi ke Teknisi.
+4. Teknisi mengeksekusi perbaikan fasilitas.
+5. Pengelola menutup tiket keluhan (status berubah menjadi "SELESAI") dan sistem menotifikasi penghuni.
 <img width="795" height="594" alt="Diagram-Sequence 3-Tiket Laporan Keluhan (Maintenance) drawio" src="https://github.com/user-attachments/assets/6c03bd67-2b7c-40d2-95fe-76fd3cae7a9b" />
 
 ## 4. Pengosongan Kamar (Proses Check-out)
+### Prosedur administratif penyelesaian masa sewa dan pembebasan kamar.
+Alur Proses:
+1. Pengelola memuat data penghuni dan memvalidasi kondisi fisik kamar (inspeksi).
+2. Blok Opsional: Jika terdapat kerusakan, pengelola menginput nominal pemotongan uang deposit.
+3. Pengelola mengeksekusi proses check-out.
+4. Sistem mengarsipkan data penghuni dan mengembalikan status kamar menjadi "KOSONG".
 <img width="679" height="470" alt="Diagram-Sequence 4-Pengosongan Kamar (Proses Check-out) drawio" src="https://github.com/user-attachments/assets/fc8f8c25-bf1f-4958-b929-286fe77f26f1" />
 
 ## 5. Rekapitulasi Keuangan & Operasional
+### Modul pencatatan pengeluaran rutin dan agregasi laporan keuangan.
+Alur Proses:
+1. Pengelola menginput data biaya operasional secara berkala (looping).
+2. Pengelola meminta generate laporan keuangan berdasarkan parameter periode waktu.
+3. Sistem mengalkulasi total pengeluaran dan total pemasukan untuk menghasilkan nilai laba bersih.
+4. Sistem merender data keuangan dalam antarmuka grafik.
+5. Blok Opsional: Pengelola memicu fungsi export untuk mengunduh laporan dalam format PDF.
+<img width="899" height="791" alt="Diagram-Sequence 5-Rekapitulasi Keuangan   Operasional drawio" src="https://github.com/user-attachments/assets/f28e2fde-0c6e-4372-9522-e9f3db386dbc" />
 
 
 # Kesimpulan
