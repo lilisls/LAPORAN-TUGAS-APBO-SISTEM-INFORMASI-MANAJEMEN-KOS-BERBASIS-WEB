@@ -381,23 +381,10 @@ Class Penghuni merepresentasikan penyewa kamar kos yang menggunakan sistem secar
 * lihatTagihan() — Menampilkan rincian nominal tagihan aktif bulan berjalan
 * lihatRiwayat() — Mengakses daftar transaksi pembayaran yang pernah dilakukan sebelumnya
 
----
-
-## 3. Class Teknisi
-Class Teknisi digunakan untuk mendata pekerja lapangan yang bertanggung jawab melakukan perbaikan fisik berdasarkan eskalasi keluhan fasilitas.
-
-### Atribut (Private)
-* idTeknisi : int — Identitas unik sistem untuk teknisi
-* nama : string — Nama lengkap teknisi
-* noHp : string — Nomor kontak teknisi untuk koordinasi perbaikan
-* bidang : string — Keahlian spesifik teknisi (misal: Kelistrikan, Plambing, Elektronik)
-
-### Method (Public)
-* perbaikiFasilitas() — Mengubah status penanganan kerja teknisi pada fasilitas terkait
 
 ---
 
-## 4. Class Kamar
+## 3. Class Kamar
 Class Kamar merepresentasikan data fisik entitas unit kamar kos yang disewakan.
 
 ### Atribut (Private)
@@ -414,7 +401,7 @@ Class Kamar merepresentasikan data fisik entitas unit kamar kos yang disewakan.
 
 ---
 
-## 5. Class Keluhan
+## 4. Class Keluhan
 Class Keluhan digunakan untuk mencatat, menampung, dan melacak status penyelesaian masalah sarana kos yang dikeluhkan pengguna.
 
 ### Atribut (Private)
@@ -432,7 +419,7 @@ Class Keluhan digunakan untuk mencatat, menampung, dan melacak status penyelesai
 
 ---
 
-## 6. Class Notifikasi
+## 5. Class Notifikasi
 Class Notifikasi berfungsi sebagai mesin pengelola pesan atau pengingat berkala yang dihasilkan oleh sistem.
 
 ### Atribut (Private)
@@ -446,7 +433,7 @@ Class Notifikasi berfungsi sebagai mesin pengelola pesan atau pengingat berkala 
 
 ---
 
-## 7. Class Tagihan
+## 6. Class Tagihan
 Class Tagihan menyimpan akumulasi nilai finansial berkala yang wajib dilunasi oleh penghuni sesuai siklus sewa.
 
 ### Atribut (Private)
@@ -462,7 +449,7 @@ Class Tagihan menyimpan akumulasi nilai finansial berkala yang wajib dilunasi ol
 
 ---
 
-## 8. Class Pembayaran
+## 7. Class Pembayaran
 Class Pembayaran mencatat seluruh riwayat pembuktian transaksi finansial yang diajukan penghuni sebagai pelunasan tagihan.
 
 ### Atribut (Private)
@@ -479,7 +466,7 @@ Class Pembayaran mencatat seluruh riwayat pembuktian transaksi finansial yang di
 
 ---
 
-## 9. Class BiayaOperasional
+## 8. Class BiayaOperasional
 Class BiayaOperasional berfungsi mencatat arus kas keluar (cash outflow) di luar pengeluaran pribadi penyewa untuk kebutuhan operasional rumah kos.
 
 ### Atribut (Private)
@@ -493,7 +480,7 @@ Class BiayaOperasional berfungsi mencatat arus kas keluar (cash outflow) di luar
 
 ---
 
-## 10. Class LaporanKeuangan
+## 9. Class LaporanKeuangan
 Class LaporanKeuangan berfungsi merekapitulasi seluruh kalkulasi neraca laba-rugi bisnis kos pada jangka waktu berkala.
 
 ### Atribut (Private)
