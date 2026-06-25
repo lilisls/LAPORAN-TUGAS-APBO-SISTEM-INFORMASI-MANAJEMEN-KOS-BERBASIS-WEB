@@ -538,15 +538,12 @@ Class LaporanKeuangan berfungsi merekapitulasi seluruh kalkulasi neraca laba-rug
 * **Jenis Relasi:** One to One (1 ke 0..1)
 * **Penjelasan:** Tagihan memiliki hubungan dengan Pembayaran karena satu tagihan hanya dapat dibayar dengan satu pembayaran atau belum dibayar sama sekali.
 
-### 11. Relasi Keluhan dengan Teknisi
-* **Jenis Relasi:** Many to One (*..1)
-* **Penjelasan:** Keluhan memiliki hubungan dengan Teknisi karena satu teknisi dapat menangani banyak keluhan, sedangkan satu keluhan ditangani oleh maksimal satu teknisi.
 
-### 12. Relasi LaporanKeuangan dengan Pembayaran
+### 11. Relasi LaporanKeuangan dengan Pembayaran
 * **Jenis Relasi:** One to Many (1..*)
 * **Penjelasan:** LaporanKeuangan memiliki hubungan dengan Pembayaran karena satu laporan keuangan mengambil data dari banyak transaksi pembayaran sebagai sumber pemasukan.
 
-### 13. Relasi LaporanKeuangan dengan BiayaOperasional
+### 12. Relasi LaporanKeuangan dengan BiayaOperasional
 * **Jenis Relasi:** One to Many (1..*)
 * **Penjelasan:** LaporanKeuangan memiliki hubungan dengan BiayaOperasional karena satu laporan keuangan mengambil data dari banyak biaya operasional sebagai sumber pengeluaran.
 
