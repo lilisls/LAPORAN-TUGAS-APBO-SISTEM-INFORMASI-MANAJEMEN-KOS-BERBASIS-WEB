@@ -30,22 +30,54 @@ Keterbatasan dalam pengelolaan kos yang masih dilakukan secara manual menunjukka
 
 
 ### 1. Sistem Informasi Manajemen
-Sistem Informasi Manajemen merupakan sistem yang digunakan untuk mengelola dan mengolah data menjadi informasi yang berguna dalam mendukung operasional dan pengambilan keputusan. Dalam pengelolaan kos, sistem ini berperan dalam mengintegrasikan data penyewa, status kamar, serta riwayat pembayaran ke dalam satu sistem yang terstruktur.
+Sistem Informasi Manajemen merupakan sistem yang digunakan untuk mengelola data dan informasi dalam suatu organisasi agar proses pengambilan keputusan dapat dilakukan dengan lebih efektif.
 
-Dengan adanya sistem yang terintegrasi, pengelola dapat memantau kondisi kos secara lebih efektif tanpa harus melakukan pencatatan secara manual, sehingga mengurangi risiko kesalahan dan meningkatkan efisiensi pengelolaan.
+Pada Sistem Informasi Manajemen Kos, konsep ini diterapkan untuk mengelola data penghuni, kamar, pembayaran, keluhan, serta laporan operasional secara terintegrasi.
 
 > **Referensi:**  [Sistem Informasi Manajemen (2021)](https://ojs.stmikdharmapalariau.ac.id/index.php/repository/article/view/590/340)
 
 
 ### 2. Sistem Berbasis Web
-Sistem berbasis web merupakan sistem yang dapat diakses melalui browser dengan memanfaatkan jaringan internet, sehingga memungkinkan pengguna memperoleh informasi dengan lebih fleksibel. Dalam pengelolaan kos, sistem ini memberikan kemudahan dalam mengakses informasi terkait ketersediaan kamar, data penyewa, serta transaksi secara real-time.
+Sistem berbasis web merupakan sistem yang dapat diakses melalui browser menggunakan jaringan internet atau lokal.
 
-Penelitian yang dilakukan oleh Zefanya Yulius Kurnia dan Marvin Chandra Wijaya (2024) menunjukkan bahwa penerapan sistem informasi kos berbasis web mampu meningkatkan efisiensi pengelolaan serta mempermudah akses informasi bagi pengguna. Hal ini membuktikan bahwa sistem berbasis web merupakan solusi yang efektif dalam mendukung pengelolaan kos secara modern.
+Penggunaan sistem berbasis web pada manajemen kos bertujuan agar pengguna dapat mengakses informasi kapan saja tanpa harus melakukan pencatatan secara manual.
+
+Keunggulan sistem berbasis web:
+
+- Mudah diakses.
+- Data tersimpan secara terpusat.
+- Mempermudah proses pengelolaan informasi.
+- Mengurangi penggunaan dokumen fisik.
+
+> **Referensi:**  [Silberschatz, Korth & Sudarshan.  
+Database System Concepts.](https://doi.org/10.18535/ijsrm/v12i03.ec11)
+
+### 3. Basis Data (Database)
+Basis data merupakan kumpulan data yang saling berhubungan dan disimpan secara terstruktur sehingga dapat dikelola, diperbarui, dan diakses dengan mudah.
+
+Pada sistem ini, database digunakan untuk menyimpan:
+
+- Data penghuni.
+- Data kamar.
+- Data pembayaran.
+- Data keluhan.
+- Data laporan keuangan.
+
+Dengan penggunaan database, proses pencarian dan pengelolaan data menjadi lebih cepat, akurat, dan aman.
 
 > **Referensi:**  [Web-based information system for boarding house information (IJSRM, 2024)](https://doi.org/10.18535/ijsrm/v12i03.ec11)
 
-### 3. Sistem Pembayaran Digital
-Sistem pembayaran digital merupakan mekanisme yang digunakan untuk mendukung proses transaksi secara elektronik, yang mencakup pengelolaan tagihan (invoicing) serta pencatatan pembayaran secara sistematis. Dalam konteks e-business, sistem ini berperan dalam meningkatkan efisiensi transaksi, mempermudah proses pembayaran, serta memastikan keamanan dan keandalan dalam pengelolaan data pembayaran.
+### 4. Sistem Informasi Pembayaran
+Sistem informasi pembayaran merupakan sistem yang digunakan untuk mencatat, memproses, dan mengelola transaksi pembayaran secara terstruktur.
+
+Pada Sistem Informasi Manajemen Kos, fitur pembayaran digunakan untuk:
+
+- Menampilkan tagihan penghuni.
+- Mengunggah bukti pembayaran.
+- Melakukan verifikasi pembayaran.
+- Menyimpan riwayat transaksi.
+
+Sistem ini membantu admin dalam memantau pembayaran secara lebih efektif.
 
 > **Referensi:** [Billing and Payment Systems (Springer, 2023)](https://link.springer.com/chapter/10.1007/978-3-031-39626-7_6#citeas)
 
