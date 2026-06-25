@@ -49,8 +49,7 @@ Keunggulan sistem berbasis web:
 - Mempermudah proses pengelolaan informasi.
 - Mengurangi penggunaan dokumen fisik.
 
-> **Referensi:**  [Silberschatz, Korth & Sudarshan.  
-Database System Concepts.](https://doi.org/10.18535/ijsrm/v12i03.ec11)
+> **Referensi:**  [Web-based information system for boarding house information (IJSRM, 2024)](https://doi.org/10.18535/ijsrm/v12i03.ec11)
 
 ### 3. Basis Data (Database)
 Basis data merupakan kumpulan data yang saling berhubungan dan disimpan secara terstruktur sehingga dapat dikelola, diperbarui, dan diakses dengan mudah.
@@ -65,7 +64,8 @@ Pada sistem ini, database digunakan untuk menyimpan:
 
 Dengan penggunaan database, proses pencarian dan pengelolaan data menjadi lebih cepat, akurat, dan aman.
 
-> **Referensi:**  [Web-based information system for boarding house information (IJSRM, 2024)](https://doi.org/10.18535/ijsrm/v12i03.ec11)
+> **Referensi:** [Silberschatz, Korth & Sudarshan.  
+Database System Concepts.](https://www.mpgcamb.com/wp-content/uploads/2024/12/Abraham-Silberschatz-Henry-F.-Korth-S.-Sudarshan-Database-System-Concepts-McGraw-Hill-Education-2019.pdf)
 
 ### 4. Sistem Informasi Pembayaran
 Sistem informasi pembayaran merupakan sistem yang digunakan untuk mencatat, memproses, dan mengelola transaksi pembayaran secara terstruktur.
@@ -81,8 +81,10 @@ Sistem ini membantu admin dalam memantau pembayaran secara lebih efektif.
 
 > **Referensi:** [Billing and Payment Systems (Springer, 2023)](https://link.springer.com/chapter/10.1007/978-3-031-39626-7_6#citeas)
 
-### 4. Manajemen Keluhan
-Manajemen keluhan merupakan proses pengelolaan laporan atau pengaduan dari pengguna terhadap suatu layanan. Penerapan sistem ini memungkinkan segala keluhan dicatat dan diproses secara terstruktur, sehingga memudahkan pengelola dalam melakukan tindak lanjut serta meningkatkan kualitas pelayanan. Selain itu, sistem manajemen keluhan juga membantu menciptakan transparansi dan komunikasi yang lebih efektif antara pengguna dan pengelola.
+### 5. Manajemen Keluhan
+Manajemen keluhan merupakan proses pengelolaan laporan atau pengaduan pengguna terhadap suatu layanan.
+
+Dalam sistem manajemen kos, fitur keluhan digunakan untuk membantu penghuni menyampaikan masalah fasilitas.
 
 > **Referensi:**
 > [Sistem Informasi Pengaduan Siswa Berbasis Website Dengan Framework Laravel (Josh, 2023)](https://pdfs.semanticscholar.org/cf97/0b30fc094d7c92a0435f36dd309cdc845891.pdf),
