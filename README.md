@@ -271,87 +271,112 @@ Informasi disampaikan melalui grup WhatsApp, namun sering tertumpuk dan terlewat
 Sistem digital:
 Informasi lebih teratur dan dapat diakses kembali kapan saja.
 
-## Bagian 3: Skenario Sistem / Use Case
+# Bagian 3: Skenario Sistem / Use Case
 
-### Pemetaan Aktor & Hak Akses
+## Pemetaan Aktor & Hak Akses
 
-Berikut adalah pemetaan aktor yang terlibat dalam Sistem Informasi Manajemen Kos beserta hak akses dan fungsionalitasnya berdasarkan dokumen perancangan resmi:
+Berikut adalah pemetaan aktor yang terlibat dalam Sistem Informasi Manajemen Kos beserta hak akses dan fungsionalitasnya yang telah disesuaikan dengan prinsip *Object-Oriented Programming* (OOP):
 
 | Peran (Aktor) | Ruang Lingkup Akses | Fungsionalitas Utama |
 | :--- | :--- | :--- |
-| **Pengelola Kos (Admin)** | Memiliki akses penuh terhadap seluruh data dan fitur dalam sistem, termasuk data penghuni, kamar, pembayaran, dan laporan keuangan. | * Mengelola data penghuni<br>* Mengelola data kamar dan status ketersediaan<br>* Memproses check-in dan check-out penghuni<br>* Memverifikasi pembayaran kos<br>* Melihat dashboard dan laporan keuangan<br>* Mengelola dan menanggapi keluhan penghuni<br>* Mengelola informasi dan notifikasi |
-| **Penghuni Kos (User)** | Memiliki akses terbatas pada data pribadi dan layanan yang berkaitan dengan kamar yang ditempati. | * Melihat informasi kamar dan tagihan bulanan<br>* Mengunggah bukti pembayaran<br>* Melihat status dan riwayat pembayaran<br>* Mengirim keluhan atau pengaduan fasilitas<br>* Menerima notifikasi dan informasi penting |
+| **Pengelola Kos (Admin)** | Memiliki akses penuh terhadap seluruh data operasional sistem melalui autentikasi untuk memicu fungsi manajemen entitas. | * Melakukan `Login` & `Logout`<br>* Kelola Data Penghuni<br>* Kelola Data Kamar (Alokasi Kamar)<br>* Memverifikasi Pembayaran<br>* Memproses Keluhan<br>* Memproses Check-out<br>* Kelola Biaya Operasional<br>* Melihat Laporan Keuangan<br>* Kelola Informasi & Pengumuman |
+| **Penghuni Kos (User)** | Memiliki akses terbatas pada manipulasi data pribadi dan pengiriman data objek yang berelasi dengan kamarnya sendiri. | * Melakukan `Login` & `Logout`<br>* Melihat Tagihan<br>* Upload Bukti Pembayaran<br>* Melihat Riwayat Pembayaran<br>* Membuat Keluhan<br>* Melihat Notifikasi & Pengumuman |
 
 ---
 
-### Detail Use Case
+## Detail Use Case
 
-#### 1. Pendaftaran Penghuni dan Alokasi Kamar
-* **Aktor:** Pengelola Kos (Admin)  
-* **Tujuan:** Menambahkan data penghuni baru ke dalam sistem dan menetapkan kamar yang akan ditempati.  
-* **Alur Interaksi:**
-  1. Admin membuka menu manajemen kamar.
-  2. Admin memilih kamar yang masih berstatus kosong.
-  3. Admin menginput data penghuni, seperti identitas, kontak, durasi sewa, dan tanggal masuk.
-  4. Sistem menyimpan data penghuni.
-  5. Sistem mengubah status kamar menjadi dihuni.
-* **Output / Hasil Akhir:** Data penghuni tersimpan dalam sistem dan kamar berhasil dialokasikan.
+Setiap skenario di bawah ini dirancang dengan prinsip *Single Responsibility* (Satu Use Case fokus pada aksi aktif dari satu aktor utama):
 
-#### 2. Pelunasan Tagihan Sewa Bulanan
-* **Aktor:** Penghuni Kos dan Pengelola Kos (Admin)  
-* **Tujuan:** Memfasilitasi proses pembayaran tagihan kos dan verifikasi pembayaran oleh admin.  
+### 1. Use Case: Kelola Data Penghuni
+* **Aktor Utama:** Pengelola Kos (Admin)  
+* **Tujuan:** Menambahkan, mengubah, atau menghapus data identitas penghuni kos ke dalam database sistem.  
 * **Alur Interaksi:**
-  1. Penghuni membuka menu tagihan pada sistem.
-  2. Penghuni melihat nominal tagihan yang harus dibayar.
-  3. Penghuni melakukan pembayaran melalui transfer.
-  4. Penghuni mengunggah bukti pembayaran ke sistem.
-  5. Sistem mengubah status pembayaran menjadi menunggu verifikasi.
-  6. Admin memeriksa bukti pembayaran.
-  7. Admin menyetujui atau menolak pembayaran.
-* **Output / Hasil Akhir:** Status pembayaran diperbarui dan riwayat pembayaran tersimpan dalam sistem.
+  1. Admin memilih menu "Kelola Data Penghuni".
+  2. Admin memilih opsi "Tambah Penghuni Baru".
+  3. Admin menginput data identitas penghuni (Nama, No HP, Kontak Darurat, Username, Password).
+  4. Sistem memvalidasi inputan dan menyimpan data objek Penghuni baru.
+* **Output / Hasil Akhir:** Objek data penghuni baru berhasil dibuat dan tersimpan.
 
-#### 3. Laporan Keluhan Fasilitas
-* **Aktor:** Penghuni Kos dan Pengelola Kos (Admin)  
-* **Tujuan:** Memfasilitasi penghuni dalam menyampaikan keluhan fasilitas agar dapat terdokumentasi dan ditindaklanjuti oleh pengelola.  
+### 2. Use Case: Kelola Data Kamar (Alokasi Kamar)
+* **Aktor Utama:** Pengelola Kos (Admin)  
+* **Tujuan:** Mengatur informasi kamar dan memetakan penempatan kamar untuk penghuni baru.  
 * **Alur Interaksi:**
-  1. Penghuni membuka menu keluhan.
-  2. Penghuni mengisi kategori keluhan dan deskripsi masalah.
-  3. Penghuni mengunggah foto pendukung jika diperlukan.
-  4. Sistem menyimpan laporan keluhan.
-  5. Admin melihat laporan keluhan yang masuk.
-  6. Admin menindaklanjuti keluhan dan memperbarui status penanganan.
-  7. Keluhan dinyatakan selesai setelah ditangani.
-* **Output / Hasil Akhir:** Keluhan tersimpan dalam sistem dan status penanganannya dapat dipantau.
+  1. Admin membuka menu "Kelola Data Kamar".
+  2. Admin memilih nomor kamar yang berstatus "Kosong".
+  3. Admin mengalokasikan kamar tersebut kepada salah satu ID Penghuni.
+  4. Sistem memperbarui atribut status kamar menjadi "Terisi".
+* **Output / Hasil Akhir:** Status kamar berubah di dalam sistem dan penempatan kamar terdata.
 
-#### 4. Pengosongan Kamar (Check-out)
-* **Aktor:** Pengelola Kos (Admin)  
-* **Tujuan:** Menyelesaikan masa tinggal penghuni dan mengubah status kamar agar dapat digunakan kembali.  
+### 3. Use Case: Upload Bukti Pembayaran
+* **Aktor Utama:** Penghuni Kos  
+* **Tujuan:** Mengunggah berkas bukti transaksi transfer bank untuk melunasi tagihan kos bulanan.  
 * **Alur Interaksi:**
-  1. Penghuni mengajukan atau menginformasikan rencana check-out kepada admin.
-  2. Admin melakukan pemeriksaan kamar.
-  3. Admin menyelesaikan administrasi akhir penghuni.
-  4. Sistem mengarsipkan data penghuni.
-  5. Sistem mengubah status kamar menjadi kosong.
-* **Output / Hasil Akhir:** Data penghuni diarsipkan dan status kamar berubah menjadi kosong.
+  1. Penghuni memilih menu "Melihat Tagihan".
+  2. Penghuni memilih tagihan aktif lalu menekan opsi "Upload Bukti".
+  3. Penghuni mengunggah gambar resi transfer dan menekan tombol kirim.
+  4. Sistem membuat objek Pembayaran baru dan mengubah status objek Tagihan terkait menjadi "Menunggu Verifikasi".
+* **Output / Hasil Akhir:** Objek pembayaran tercipta dan status tagihan terbarui.
 
-#### 5. Rekapitulasi Keuangan dan Operasional
-* **Aktor:** Pengelola Kos (Admin)  
-* **Tujuan:** Membantu pengelola mengetahui pemasukan, pengeluaran, dan kondisi keuangan kos secara lebih terstruktur.  
+### 4. Use Case: Memverifikasi Pembayaran
+* **Aktor Utama:** Pengelola Kos (Admin)  
+* **Tujuan:** Melakukan pengecekan terhadap validitas bukti transfer yang diunggah oleh penghuni kos.  
 * **Alur Interaksi:**
-  1. Admin membuka menu laporan keuangan.
-  2. Admin mencatat biaya operasional kos.
-  3. Sistem mengambil data pembayaran yang sudah diverifikasi.
-  4. Sistem menghitung total pemasukan dan pengeluaran.
-  5. Sistem menghasilkan laporan keuangan.
-* **Output / Hasil Akhir:** Laporan keuangan dan operasional dapat ditampilkan atau diunduh oleh admin.
+  1. Admin membuka menu "Memverifikasi Pembayaran".
+  2. Admin memilih data pembayaran yang berstatus "Menunggu Verifikasi".
+  3. Admin memeriksa kesesuaian gambar bukti transfer dengan mutasi bank asli.
+  4. Admin menekan tombol "Verifikasi Sukses" (atau "Tolak" jika tidak sesuai).
+  5. Sistem mengubah status Pembayaran menjadi "Lunas" dan meneruskan pembaruan data ke kelas Laporan Keuangan.
+* **Output / Hasil Akhir:** Transaksi dinyatakan sah dan status tagihan berubah menjadi lunas.
+
+### 5. Use Case: Membuat Keluhan
+* **Aktor Utama:** Penghuni Kos  
+* **Tujuan:** Melaporkan adanya kendala atau kerusakan pada fasilitas kos agar terdata oleh pengelola.  
+* **Alur Interaksi:**
+  1. Penghuni membuka menu "Membuat Keluhan".
+  2. Penghuni mengisi kategori keluhan, deskripsi permasalahan, dan mengunggah foto pendukung.
+  3. Sistem membuat objek data Keluhan baru dengan status awal berupa "Pending".
+* **Output / Hasil Akhir:** Laporan keluhan baru terdaftar di dalam sistem antrean admin.
+
+### 6. Use Case: Memproses Keluhan
+* **Aktor Utama:** Pengelola Kos (Admin)  
+* **Tujuan:** Merespons, menindaklanjuti, dan memperbarui status penanganan atas keluhan fasilitas yang dikirim oleh penghuni.  
+* **Alur Interaksi:**
+  1. Admin membuka menu "Memproses Keluhan".
+  2. Admin memilih keluhan berstatus "Pending" dan mengubah statusnya menjadi "Sedang Diproses" saat teknisi mulai bekerja.
+  3. Setelah perbaikan fasilitas selesai dilakukan, Admin menekan tombol "Selesaikan Keluhan".
+  4. Sistem memperbarui status objek Keluhan tersebut menjadi "Selesai".
+* **Output / Hasil Akhir:** Siklus hidup objek keluhan ditutup dengan status akhir selesai.
+
+### 7. Use Case: Memproses Check-out
+* **Aktor Utama:** Pengelola Kos (Admin)  
+* **Tujuan:** Menyelesaikan masa sewa penghuni, mengarsipkan data, dan mengosongkan kembali slot kamar.  
+* **Alur Interaksi:**
+  1. Admin membuka menu "Memproses Check-out".
+  2. Admin memilih nama penghuni yang masa sewanya telah berakhir atau mengajukan keluar.
+  3. Admin memvalidasi administrasi akhir dan menyelesaikan sewa.
+  4. Sistem mengubah status objek Kamar terkait menjadi "Kosong" dan mengarsipkan record Penghuni tersebut.
+* **Output / Hasil Akhir:** Kamar kembali berstatus kosong dan siap dialokasikan ulang.
+
+### 8. Use Case: Kelola Biaya Operasional & Keuangan
+* **Aktor Utama:** Pengelola Kos (Admin)  
+* **Tujuan:** Mencatat pengeluaran rutin kos bulanan serta memantau ringkasan neraca laba bersih.  
+* **Alur Interaksi:**
+  1. Admin membuka menu "Kelola Biaya Operasional".
+  2. Admin menginput nominal dan detail pengeluaran kos (misal: listrik, air, gaji penjaga).
+  3. Sistem menyimpan data pengeluaran dan secara otomatis memperbarui kalkulasi pada objek Laporan Keuangan.
+* **Output / Hasil Akhir:** Data pengeluaran kos tercatat dan terakumulasi ke dalam neraca keuangan.
 
 ---
+
+## Diagram Use Case
 
 ### Diagram Use Case
 
 Di bawah ini adalah representasi visual dari hubungan interaksi antar aktor terhadap fungsi-fungsi di dalam Sistem Informasi Manajemen Kos:
 
-<img width="772" height="628" alt="Screenshot 2026-06-24 233816" src="https://github.com/user-attachments/assets/51ec9166-cb00-43d4-b024-a163c4089f0c" />
+<img width="307" height="580" alt="USE CASE DIAGRAM - SI MANAJEMEN KOST drawio" src="https://github.com/user-attachments/assets/4f5df610-c4cd-48ed-bea0-b4aa8e12b2f0" />
+
 
 
 ---
