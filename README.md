@@ -159,50 +159,50 @@ Tugas dan tanggung jawab:
 # 1. Manajemen Data Penghuni
 
 Sistem manual:
-Data biasanya disimpan dalam bentuk berkas seperti fotokopi KTP. Jika jumlah data sudah banyak, akan sulit dicari karena tercampur.
+Pengelola menyimpan data penghuni secara manual menggunakan berkas fisik seperti fotokopi KTP yang ditumpuk di satu tempat. Ketika jumlah penghuni semakin banyak, mencari data satu penghuni saja bisa memakan waktu lama karena harus membuka satu per satu. Belum lagi risiko berkas hilang, rusak terkena air, atau tertukar dengan data penghuni lain.
 
 Sistem digital:
-Data disimpan dalam database sehingga lebih rapi dan mudah dicari. Risiko kehilangan data juga lebih kecil.
+Semua data penghuni tersimpan di database yang terstruktur. Pengelola cukup mengetik nama atau nomor kamar untuk langsung menemukan data yang dicari dalam hitungan detik.
 
 ---
 
-# 2. Pembayaran
+# 2. Pembayaran Sewa
 
 Sistem manual:
-Pembayaran dicatat di buku, dan bukti pembayaran sering dikirim melalui WhatsApp. Untuk mengecek siapa yang belum bayar harus dilakukan satu per satu.
+Pembayaran dicatat di buku tulis dan penghuni mengirim bukti transfer lewat WhatsApp. Pengelola harus mengecek satu per satu chat masuk, lalu mencocokkannya dengan catatan buku secara manual. Jika lupa atau terlewat, bisa terjadi kesalahpahaman antara pengelola dan penghuni soal status pembayaran.
 
 Sistem digital:
-Pembayaran tercatat langsung di sistem. Penghuni dapat mengunggah bukti pembayaran dan statusnya bisa langsung dilihat.
+Penghuni mengunggah bukti transfer langsung di portal dan status pembayaran langsung berubah secara otomatis. Pengelola tinggal membuka dashboard untuk melihat siapa saja yang sudah dan belum membayar tanpa perlu mengecek WhatsApp satu per satu.
+
 
 ---
 
 # 3. Pengingat Pembayaran
 
 Sistem manual:
-Pengelola harus mengingat dan menagih secara manual, dan terkadang merasa tidak enak.
+Pengelola harus mengingat sendiri siapa yang belum bayar dan menagihnya secara personal. Hal ini sering terasa canggung karena pengelola harus menegur penghuni secara langsung, dan terkadang menagih berulang kali ke orang yang sama.
 
 Sistem digital:
-Sistem dapat mengirim pengingat otomatis sehingga lebih praktis dan mengurangi keterlambatan.
+Pengingat pembayaran dikirim otomatis oleh sistem sebelum jatuh tempo. Pengelola tidak perlu lagi menagih secara personal karena sistem yang bertugas mengingatkan, sehingga hubungan antara pengelola dan penghuni tetap nyaman.
 
 ---
 
-# 4. Keluhan
+# 4. Penanganan Keluhan
 
 Sistem manual:
-Keluhan disampaikan melalui chat dan tidak selalu tercatat dengan baik.
+Penghuni menyampaikan keluhan lewat chat WhatsApp yang mudah tenggelam oleh pesan lain. Tidak ada pencatatan resmi, sehingga pengelola bisa saja lupa menindaklanjuti keluhan tertentu. Penghuni pun tidak tahu apakah keluhannya sudah diproses atau belum.
 
 Sistem digital:
-Keluhan tercatat dalam sistem sehingga memiliki riwayat dan lebih mudah ditindaklanjuti.
-
+Setiap keluhan tercatat sebagai tiket dengan status yang bisa dipantau oleh penghuni secara langsung di portal. Pengelola tidak bisa melewatkan keluhan karena semuanya masuk ke dashboard dan harus ditindaklanjuti satu per satu.
 ---
 
 # 5. Penyampaian Informasi
 
 Sistem manual:
-Informasi disampaikan melalui grup WhatsApp, namun sering tertumpuk dan terlewat.
+Informasi penting seperti jadwal kebersihan atau kenaikan harga sewa disampaikan lewat grup WhatsApp. Pesan ini sering tertumpuk oleh obrolan lain dan terlewat oleh penghuni yang jarang membuka grup.
 
 Sistem digital:
-Informasi lebih teratur dan dapat diakses kembali kapan saja.
+Informasi disampaikan lewat fitur notifikasi yang langsung muncul di portal penghuni. Penghuni bisa membuka kembali informasi tersebut kapan saja tanpa khawatir tertumpuk atau terhapus.
 
 ## Bagian 3: Skenario Sistem / Use Case
 
