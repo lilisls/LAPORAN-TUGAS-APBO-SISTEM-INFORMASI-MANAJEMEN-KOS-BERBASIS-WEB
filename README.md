@@ -261,6 +261,7 @@ Penghuni menyampaikan keluhan lewat chat WhatsApp yang mudah tenggelam oleh pesa
 
 Sistem digital:
 Setiap keluhan tercatat sebagai tiket dengan status yang bisa dipantau oleh penghuni secara langsung di portal. Pengelola tidak bisa melewatkan keluhan karena semuanya masuk ke dashboard dan harus ditindaklanjuti satu per satu.
+
 ---
 
 # 5. Penyampaian Informasi
