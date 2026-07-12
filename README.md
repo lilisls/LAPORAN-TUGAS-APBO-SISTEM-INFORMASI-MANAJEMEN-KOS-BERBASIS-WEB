@@ -323,52 +323,140 @@ Di bawah ini adalah representasi visual dari hubungan interaksi antar aktor terh
 ---
 
 # Sequence Diagram
-## 1. Pendaftaran Penghuni & Alokasi Kamar (Onboarding)
-### Pencatatan data penghuni baru dan pembaruan status ketersediaan kamar.
+## 1. Kelola Biaya Operasional (Pengelola)
+### Pencatatan dan manajemen pengeluaran operasional kos di luar fasilitas langsung.
 Alur Proses:
-1. Pengelola memuat daftar kamar dengan status "KOSONG".
-2. Pengelola menginput data calon penghuni (biodata, deposit, jatuh tempo).
-3. Sistem membuat entri data penghuni baru ke dalam database.
-4. Sistem mengubah status kamar terkait menjadi "DIHUNI".
-<img width="801" height="420" alt="Diagram-Sequence 1-Pendaftaran Penghuni   Alokasi Kamar (Onboarding) drawio" src="https://github.com/user-attachments/assets/6a663758-a6cc-43bd-98e7-3cf79cca90eb" />
+1. Pengelola memilih menu kelola biaya operasional pada antarmuka sistem.
+2. Sistem memuat daftar riwayat pencatatan biaya operasional.
+3. Pengelola menginput variabel pengeluaran baru (nama biaya, nominal jumlah, keterangan, dan tanggal).
+4. Sistem mengeksekusi penambahan data ke dalam database dan memperbarui tampilan log pengeluaran.
+<img width="735" height="515" alt="Pengelola-Kelola Biaya Operasional drawio" src="https://github.com/user-attachments/assets/87e83326-e02d-4b36-b0f0-2f1306885f7b" />
 
-## 2. Pelunasan Tagihan Sewa Bulanan
-### Mekanisme pembayaran sewa oleh penghuni dan proses validasi oleh pengelola.
-Alur Proses:
-1. Penghuni memuat detail tagihan dan mengunggah bukti pembayaran.
-2. Sistem mengubah status tagihan menjadi "MENUNGGU VERIFIKASI".
-3. Pengelola memverifikasi bukti pembayaran.
-4. Blok Alternatif (Validasi): <br> Valid: Status diubah menjadi "LUNAS", sistem menerbitkan kuitansi, dan mengirimkannya ke penghuni. <br> Tidak Valid: Status dikembalikan ke "BELUM DIBAYAR" dan sistem mengirimkan notifikasi penolakan ke penghuni.
-<img width="964" height="825" alt="Diagram-Sequence 2-Pelunasan Tagihan Sewa Bulanan drawio" src="https://github.com/user-attachments/assets/c734f87f-4445-4f59-b05b-8ad8dcac7a1f" />
-
-## 3. Tiket Laporan Keluhan (Maintenance)
-### Alur pengajuan, penugasan, dan penyelesaian kendala fasilitas kamar.
-Alur Proses:
-1. Penghuni mengirimkan data keluhan (kategori, deskripsi, foto).
-2. Sistem mencatat keluhan dengan status awal "ANTREAN".
-3. Pengelola merespons tiket (status berubah menjadi "DIPROSES") dan meneruskan instruksi ke Teknisi.
-4. Teknisi mengeksekusi perbaikan fasilitas.
-5. Pengelola menutup tiket keluhan (status berubah menjadi "SELESAI") dan sistem menotifikasi penghuni.
-<img width="795" height="594" alt="Diagram-Sequence 3-Tiket Laporan Keluhan (Maintenance) drawio" src="https://github.com/user-attachments/assets/6c03bd67-2b7c-40d2-95fe-76fd3cae7a9b" />
-
-## 4. Pengosongan Kamar (Proses Check-out)
-### Prosedur administratif penyelesaian masa sewa dan pembebasan kamar.
+## 2. Memproses Check-out (Pengelola)
+### Prosedur administratif penyelesaian masa sewa dan pembebasan kamar penghuni.
 Alur Proses:
 1. Pengelola memuat data penghuni dan memvalidasi kondisi fisik kamar (inspeksi).
 2. Blok Opsional: Jika terdapat kerusakan, pengelola menginput nominal pemotongan uang deposit.
 3. Pengelola mengeksekusi proses check-out.
 4. Sistem mengarsipkan data penghuni dan mengembalikan status kamar menjadi "KOSONG".
-<img width="679" height="470" alt="Diagram-Sequence 4-Pengosongan Kamar (Proses Check-out) drawio" src="https://github.com/user-attachments/assets/fc8f8c25-bf1f-4958-b929-286fe77f26f1" />
+<img width="679" height="470" alt="Pengelola-Memproses Checkout drawio" src="https://github.com/user-attachments/assets/f5c1fab9-6feb-455a-9975-c3ad07b3e1fa" />
 
-## 5. Rekapitulasi Keuangan & Operasional
-### Modul pencatatan pengeluaran rutin dan agregasi laporan keuangan.
+## 3. Memproses Keluhan (Pengelola)
+### Tindak lanjut pengelola terhadap laporan kendala fasilitas dari penghuni.
 Alur Proses:
-1. Pengelola menginput data biaya operasional secara berkala (looping).
-2. Pengelola meminta generate laporan keuangan berdasarkan parameter periode waktu.
+1. Pengelola membuka daftar keluhan yang berstatus "ANTREAN".
+2. Pengelola merespons tiket (status berubah menjadi "DIPROSES") dan meneruskan instruksi ke Teknisi.
+3. Teknisi mengeksekusi perbaikan fasilitas.
+4. Pengelola menutup tiket keluhan (status berubah menjadi "SELESAI") dan sistem menotifikasi penghuni.
+<img width="795" height="594" alt="Pengelola-Memproses Keluhan drawio" src="https://github.com/user-attachments/assets/3863d501-93f2-4931-9a94-d2efa8c994ab" />
+
+## 4. Memverifikasi Pembayaran (Pengelola)
+### Proses pengecekan dan validasi bukti pembayaran yang dikirimkan oleh penghuni.
+Alur Proses:
+1. Sistem menampilkan daftar pembayaran dengan status "MENUNGGU VERIFIKASI".
+2. Pengelola memilih dan memverifikasi kesesuaian nominal pada dokumen bukti pembayaran.
+3. Blok Alternatif (Validasi): <br> Valid: Status diubah menjadi "LUNAS" dan sistem menerbitkan kuitansi. <br> Tidak Valid: Status dikembalikan ke "BELUM DIBAYAR" dan sistem mengirimkan notifikasi penolakan ke penghuni.
+<img width="964" height="825" alt="Pengelola-Memverifikasi Pembayaran drawio" src="https://github.com/user-attachments/assets/0d23655c-28f3-4ea8-b570-1cdf61422194" />
+
+## 5. Kelola Data Kamar (Pengelola)
+### Proses pemeliharaan master data kamar termasuk pembaruan ketersediaan, harga, dan fasilitas.
+Alur Proses:
+1. Pengelola menavigasi ke halaman pengelolaan kamar.
+2. Sistem memuat daftar seluruh kamar beserta rincian statusnya.
+3. Pengelola memilih kamar dan mengubah detail informasi (tipe kamar, harga, atau status).
+4. Sistem menyimpan perubahan ke database dan memperbarui tampilan daftar kamar.
+<img width="801" height="420" alt="Pengelola-Kelola Data Kamar drawio" src="https://github.com/user-attachments/assets/36ed79c0-b8dc-4311-b842-0e8188744f46" />
+
+## 6. Kelola Data Penghuni (Pengelola)
+### Pencatatan data penghuni baru untuk mengelola informasi penyewa kos.
+Alur Proses:
+1. Pengelola memuat daftar kamar dengan status "KOSONG".
+2. Pengelola menginput data calon penghuni (biodata, deposit, jatuh tempo).
+3. Sistem membuat entri data penghuni baru ke dalam database.
+4. Sistem mengubah status kamar terkait menjadi "DIHUNI".
+<img width="714" height="339" alt="Pengelola-Kelola Data Penghuni drawio" src="https://github.com/user-attachments/assets/d1f8d76c-1bea-4f69-9543-cc806996d0fd" />
+
+## 7. Kelola Informasi & Pengumuman (Pengelola)
+### Proses pembuatan dan penyebaran pemberitahuan atau informasi kepada penghuni kos.
+Alur Proses:
+1. Pengelola membuka menu kelola informasi dan pengumuman.
+2. Pengelola memasukkan detail pesan (judul, isi pesan, jenis/target notifikasi).
+3. Pengelola memerintahkan sistem untuk mengirimkan informasi.
+4. Sistem membuat entri ke entitas Notifikasi dan mendistribusikannya ke portal penghuni yang dituju.
+<img width="929" height="335" alt="Pengelola-Kelola Informasi dan Pengumuman drawio" src="https://github.com/user-attachments/assets/d62b0fef-6277-407d-b9f6-88d35496dc6f" />
+
+## 8. Melihat Laporan Keuangan (Pengelola)
+### Agregasi data pemasukan dan pengeluaran operasional untuk menghasilkan rekapitulasi keuangan.
+Alur Proses:
+1. Pengelola meminta sistem generate laporan keuangan berdasarkan parameter periode waktu.
+2. Sistem mengambil data pemasukan (tagihan lunas) dan pengeluaran (biaya operasional).
 3. Sistem mengalkulasi total pengeluaran dan total pemasukan untuk menghasilkan nilai laba bersih.
 4. Sistem merender data keuangan dalam antarmuka grafik.
 5. Blok Opsional: Pengelola memicu fungsi export untuk mengunduh laporan dalam format PDF.
-<img width="899" height="791" alt="Diagram-Sequence 5-Rekapitulasi Keuangan   Operasional drawio" src="https://github.com/user-attachments/assets/f28e2fde-0c6e-4372-9522-e9f3db386dbc" />
+<img width="899" height="791" alt="Pengelola-Melihat Laporan Keuangan drawio" src="https://github.com/user-attachments/assets/ed075c5a-1b40-4183-948c-0443a126d385" />
+
+## 9. Login (Pengelola)
+### Proses autentikasi untuk memverifikasi hak akses pengelola ke dalam sistem.
+Alur Proses:
+1. Pengelola membuka halaman login.
+2. Pengelola menginput kredensial (username dan password).
+3. Sistem memvalidasi data ke dalam entitas Admin.
+4. Blok Alternatif: <br> Valid: Sistem mengarahkan ke Dashboard Admin. <br> Tidak Valid: Sistem menolak akses dan menampilkan pesan error.
+<img width="716" height="394" alt="Pengelola-Login drawio" src="https://github.com/user-attachments/assets/f18b23e6-a8c3-46f6-85d5-5c75cacf05f9" />
+
+## 10. Login (Penghuni)
+### Proses autentikasi untuk memverifikasi hak akses penghuni ke dalam portal kos.
+Alur Proses:
+1. Penghuni membuka halaman login.
+2. Penghuni menginput kredensial (username dan password).
+3. Sistem mencocokkan data pada entitas Penghuni.
+4. Blok Alternatif: <br> Valid: Sistem mengarahkan ke Dashboard Penghuni. <br> Tidak Valid: Sistem menampilkan peringatan kredensial salah.
+<img width="711" height="394" alt="Penghuni-Login drawio" src="https://github.com/user-attachments/assets/162fa7a2-a0d9-434f-981d-76f55ae91289" />
+
+## 11. Melihat Notifikasi & Pengumuman (Penghuni)
+### Alur pengecekan informasi, pengingat, atau pesan dari pengelola oleh penghuni.
+Alur Proses:
+1. Penghuni memilih menu notifikasi pada antarmuka sistem.
+2. Sistem mengambil log pengumuman dan notifikasi terbaru yang ditujukan untuk penghuni tersebut.
+3. Sistem merender daftar pemberitahuan di layar.
+4. Blok Opsional: Penghuni membuka pesan spesifik, lalu sistem menandai status notifikasi menjadi "DIBACA".
+<img width="732" height="408" alt="Penghuni-Melihat Notifikasi dan Pengumuman drawio" src="https://github.com/user-attachments/assets/b192e1b6-6f40-4a58-bc03-d1f8fb2e82b4" />
+
+## 12. Membuat Keluhan (Penghuni)
+### Mekanisme pengajuan laporan jika terdapat kendala pada fasilitas kos oleh penghuni.
+Alur Proses:
+1. Penghuni memilih menu pembuatan keluhan.
+2. Sistem menampilkan formulir pelaporan.
+3. Penghuni mengisi atribut keluhan (kategori, deskripsi) dan mengunggah foto pendukung.
+4. Blok Alternatif: <br> Lengkap: Sistem merekam entri tiket baru dan memberikan konfirmasi keberhasilan. <br> Tidak Lengkap: Sistem meminta pengguna melengkapi formulir yang diwajibkan.
+<img width="787" height="376" alt="Penghuni-Membuat Keluhan drawio" src="https://github.com/user-attachments/assets/5ee96d77-d92f-4ca3-8ada-c325aa4e7916" />
+
+## 13. Melihat Riwayat Pembayaran (Penghuni)
+### Modul bagi penghuni untuk memantau rekam jejak transaksi yang telah diselesaikan.
+Alur Proses:
+1. Penghuni mengakses menu riwayat pembayaran.
+2. Sistem melakukan kueri riwayat transaksi terkait ke database.
+3. Blok Alternatif: <br> Tersedia: Sistem merender daftar historis pembayaran. <br> Kosong: Sistem menampilkan pesan bahwa riwayat masih kosong.
+4. Blok Opsional: Penghuni memilih riwayat tertentu untuk melihat detail atau mencetak kuitansi.
+<img width="788" height="502" alt="Penghuni-Melihat Riwayat Pembayaran drawio" src="https://github.com/user-attachments/assets/cbfa6940-4dd6-4821-bb52-0577496f7579" />
+
+## 14. Upload Bukti Pembayaran (Penghuni)
+### Prosedur pengiriman dokumen bukti transfer untuk pelunasan tagihan oleh penghuni.
+Alur Proses:
+1. Penghuni menekan tombol bayar pada rincian tagihan aktif.
+2. Sistem merender antarmuka informasi rekening tujuan ibu kos.
+3. Penghuni mengunggah dokumen bukti pembayaran (format JPG/PNG/PDF, maksimal 5MB).
+4. Blok Alternatif: <br> Valid: Sistem menyimpan dokumen, mengubah status tagihan menjadi "MENUNGGU VERIFIKASI", dan menampilkan notifikasi sukses. <br> Tidak Valid: Sistem menolak unggahan dan menampilkan peringatan batas ukuran atau format.
+<img width="956" height="484" alt="Penghuni-Upload Bukti Pembayaran drawio" src="https://github.com/user-attachments/assets/e6610f14-850b-449a-827e-94595f2e3459" />
+
+## 15. Melihat Tagihan (Penghuni)
+### Proses pemuatan rincian tagihan sewa kamar dan beban fasilitas aktif milik penghuni.
+Alur Proses:
+1. Penghuni memilih menu tagihan pada portal.
+2. Sistem mengambil data tagihan aktif berdasarkan identitas penghuni.
+3. Blok Alternatif: <br> Ditemukan: Sistem merender rincian biaya (sewa, listrik, air) dan total tagihan. <br> Kosong: Sistem menampilkan pesan tidak ada tagihan aktif.
+4. Blok Opsional: Jika status tagihan "BELUM DIBAYAR", sistem memunculkan peringatan kuning batas waktu jatuh tempo.
+<img width="776" height="371" alt="Penghuni-Melihat Tagihan drawio" src="https://github.com/user-attachments/assets/baf2e79e-c324-4be9-a575-0b9981578f18" />
 
 ---
 
