@@ -863,3 +863,8 @@ Activity Diagram ini menjelaskan proses pembuatan laporan keuangan yang digunaka
 https://youtu.be/Ht3Yw0b4vEQ?si=3xYI0jfAnSTSZf1V
 
 ---
+
+### LINK UI/UX FIGMA
+https://www.figma.com/design/nBgLWHB6HwONHf35bUklKj/Untitled?node-id=0-1&t=yZxuKgWzAg8nhSdg-1
+
+---
