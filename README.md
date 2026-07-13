@@ -473,7 +473,7 @@ Class LaporanKeuangan bertanggung jawab memproses akumulasi kalkulasi arus kas k
 * Penjelasan: Satu LaporanKeuangan menarik rekapan total pengeluaran dana dari banyak objek data BiayaOperasional.
 
 ---
-
+ 
 ## Kesimpulan
 
 Berdasarkan hasil analisis sistem berjalan, pengelolaan operasional kos secara konvensional (menggunakan media fisik dan aplikasi pesan instan) terbukti rentan terhadap redundansi data, salah catat transaksi keuangan, hingga lambatnya penanganan keluhan fasilitas akibat tidak adanya pusat pelaporan yang terstruktur.
