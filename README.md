@@ -868,3 +868,5 @@ https://youtu.be/Ht3Yw0b4vEQ?si=3xYI0jfAnSTSZf1V
 https://www.figma.com/design/nBgLWHB6HwONHf35bUklKj/Untitled?node-id=0-1&t=yZxuKgWzAg8nhSdg-1
 
 ---
+### LINK PPT
+https://drive.google.com/file/d/19QRJLOLWw-vm0kCi_SIrGJ0Hxrmympki/view?usp=sharing
