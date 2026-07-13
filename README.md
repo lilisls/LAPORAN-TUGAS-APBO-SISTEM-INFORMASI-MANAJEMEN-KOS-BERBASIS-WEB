@@ -608,7 +608,7 @@ Class LaporanKeuangan berfungsi merekapitulasi seluruh kalkulasi neraca laba-rug
 * **Penjelasan:** LaporanKeuangan memiliki hubungan dengan BiayaOperasional karena satu laporan keuangan mengambil data dari banyak biaya operasional sebagai sumber pengeluaran.
 
 ---
-
+ 
 ## Kesimpulan
 
 Berdasarkan hasil wawancara dan analisis sistem yang sedang berjalan, dapat disimpulkan bahwa pengelolaan kos yang masih dilakukan secara manual menimbulkan berbagai permasalahan signifikan, seperti kesulitan dalam pencatatan dan pencarian data penghuni, ketidakefisienan dalam monitoring pembayaran, serta kurang optimalnya komunikasi antara pengelola dan penghuni. Permasalahan ini diperkuat oleh kondisi nyata di lapangan, seperti penggunaan buku tulis dan WhatsApp sebagai media utama, yang terbukti rentan terhadap kesalahan, kehilangan data, serta informasi yang terlewat.
